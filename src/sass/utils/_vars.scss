@@ -1,5 +1,6 @@
 $primary-background-color: #f6f6f6;
 $backdrop-background: rgba(17, 17, 17, 0.4);
+
 $dark-color: #111111;
 $dark-gray-color: #202024;
 $white-gray-color: #f3f3f3;
@@ -7,6 +8,10 @@ $text-gray-color: #b4afaf;
 $blue-color: #4f2ee8;
 $yellow-color: #eac645;
 $white-color: #ffffff;
+
+$white-theme-gray-text-color: rgba(17, 17, 17, 0.6);
+$black-theme-gray-text-color: rgba(255, 255, 255, 0.6);
+
 $radial-gradient: radial-gradient(
   183.6% 183.01% at 59.76% -23.42%,
   #4f2ee8 18.03%,
