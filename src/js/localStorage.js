@@ -1,7 +1,5 @@
 // Файлик для работы с локальным хранилищем
 
-// Тут не хватает ещё update, delete - допиши
-
 // Использовать вот так
 // import storage from './storage';
 // const { save, load } = storage;
@@ -26,7 +24,25 @@ const load = key => {
   }
 };
 
+const remove = key => {
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.error('Get state error: ', error.message);
+  }
+};
+
+const clear = () => {
+  try {
+    localStorage.clear();
+  } catch (error) {
+    console.error('Get state error: ', error.message);
+  }
+};
+
 export default {
   save,
   load,
+  remove,
+  clear,
 };
