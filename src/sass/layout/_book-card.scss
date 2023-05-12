@@ -32,7 +32,7 @@ line-height: 1.17;
 
 letter-spacing: -0.04em;
 
-color: $text-gray-color;
+color: var(--main-text-cl);
 }
 
 .book-card {
@@ -95,7 +95,7 @@ color: $text-gray-color;
     padding-top: 26px;
     padding-bottom: 26px;
 
-    background-color: $yellow-color;
+    background-color: var(--accent-cl);
     font-weight: 500;
     text-align: center;
     text-transform: uppercase;
