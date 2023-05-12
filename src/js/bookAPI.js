@@ -8,8 +8,8 @@ export class BookAPI {
     async getCategoryList() {
         const url = `${this.#BASE_URL}/category-list`;
         try {
-            const responce = await axios.get(url);
-            return responce.data;
+            const response = await axios.get(url);
+            return response.data;
         } catch (e) {
             Notify.failure('error');
         }
@@ -18,8 +18,8 @@ export class BookAPI {
     async getTopBooks() {
         const url = `${this.#BASE_URL}/top-books`;
         try {
-            const responce = await axios.get(url);
-            return responce.data;
+            const response = await axios.get(url);
+            return response.data;
         } catch (e) {
             Notify.failure('error');
         }
@@ -28,8 +28,8 @@ export class BookAPI {
     async getBooksByCategory(category) {
         const url = `${this.#BASE_URL}/category?category=${category}`;
         try {
-            const responce = await axios.get(url);
-            return responce.data;
+            const response = await axios.get(url);
+            return response.data;
         } catch (e) {
             Notify.failure('error');
         }
@@ -38,8 +38,8 @@ export class BookAPI {
     async getBooksById() {
         const url = `${this.#BASE_URL}/${this.#_id}`;
         try {
-            const responce = await axios.get(url);
-            return responce.data;
+            const response = await axios.get(url);
+            return response.data;
         } catch (e) {
             Notify.failure('error');
             throw e;
