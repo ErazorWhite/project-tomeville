@@ -1,0 +1,9 @@
+.categories-container {
+    margin-top: 40px;
+    height: 228px;
+    overflow-y: auto;
+}
+
+.categories-item:not(:last-child) {
+margin-bottom: 24px;
+}
