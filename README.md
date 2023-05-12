@@ -3,6 +3,8 @@
 Посилання на трело: **https://trello.com/b/46J9CY7L/%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-book**
 Посилання на макет Figma https://www.figma.com/file/JB3QBTgXBIHU24nMOtmVmK/Book?type=design&node-id=0-1&t=SrCh3Xm56IRcO6LZ-0
 
+ТЗ: https://docs.google.com/spreadsheets/d/1p2P89GVo0HYGW2h2dXxrxxjMbpAB5T8RG-wy4oaEkNw/edit#gid=0
+
 # Parcel template
 
 Этот проект был создан при помощи Parcel. Для знакомства и настройки
