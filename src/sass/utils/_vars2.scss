@@ -1,0 +1,89 @@
+:root {
+  --main-text-cl: #b4afaf;
+  --blue-cl: #4f2ee8;
+  --accent-cl: #eac645;
+  --white-cl: #ffffff;
+  --black-cl: #111111;
+
+  --cubic-time: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --backdrop-background: rgba(17, 17, 17, 0.4);
+  --radial-gradient: radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #ffffff 100%
+  );
+  --theme-switcher-linear-gradient: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f7f7f7 100%
+  );
+}
+
+.light-style {
+  --main-bg-cl: #f6f6f6;
+  --secondary-text-cl: #111111;
+  --secondary-bg-cl: #ffffff;
+  --third-text-cl: rgba(17, 17, 17, 0.6);
+  --switcher-gradient: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+}
+
+.dark-style {
+  --main-bg-cl: #202024;
+  --secondary-text-cl: #ffffff;
+  --secondary-bg-cl: #111111;
+  --third-text-cl: rgba(255, 255, 255, 0.6);
+  --switcher-gradient: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+}
+
+// $text-gray-cl: #b4afaf;
+// $blue-cl: #4f2ee8;
+// $accent-cl: #eac645;
+// $white-cl: #ffffff;
+
+// $cubic-time: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+// $backdrop-background: rgba(17, 17, 17, 0.4);
+// $radial-gradient: radial-gradient(
+//   183.6% 183.01% at 59.76% -23.42%,
+//   #4f2ee8 18.03%,
+//   #ffffff 100%
+// );
+// $theme-switcher-linear-gradient: linear-gradient(
+//   180deg,
+//   #ffffff 0%,
+//   #f7f7f7 100%
+// );
+
+// $primary-background-color: #f6f6f6;
+// $backdrop-background: rgba(17, 17, 17, 0.4);
+
+// $dark-color: #111111;
+// $dark-gray-color: #202024;
+// $white-gray-color: #f3f3f3;
+// $text-gray-color: #b4afaf;
+// $blue-color: #4f2ee8;
+// $yellow-color: #eac645;
+// $white-color: #ffffff;
+
+// $white-theme-gray-text-color: rgba(17, 17, 17, 0.6);
+// $black-theme-gray-text-color: rgba(255, 255, 255, 0.6);
+
+// $radial-gradient: radial-gradient(
+//   183.6% 183.01% at 59.76% -23.42%,
+//   #4f2ee8 18.03%,
+//   #ffffff 100%
+// );
+// $theme-switcher-linear-gradient: linear-gradient(
+//   180deg,
+//   #ffffff 0%,
+//   #f7f7f7 100%
+// );
+// $white-theme-switcher-linear-gradient: linear-gradient(
+//   180deg,
+//   #4f2ee8 0%,
+//   #dcdcdc 100%
+// );
+// $dark-theme-switcher-linear-gradient: linear-gradient(
+//   180deg,
+//   #4f2ee8 0%,
+//   #686868 100%
+// );

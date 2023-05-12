@@ -1,22 +1,22 @@
 // Breakpoints
-$bp-mobile: 414px;
-$bp-tablet: 1024px;
-$bp-desktop: 1280px;
+$bp-mobile: 375px; //414
+$bp-tablet: 768px; // 1024
+$bp-desktop: 1440px; //1280
 
 @mixin for-phone-only {
-    @media (max-width: ($bp-tablet - 1px)) {
-        @content;
-    }
+  @media (max-width: ($bp-tablet - 1px)) {
+    @content;
+  }
 }
 
 @mixin for-tablet-up {
-    @media (min-width: $bp-tablet) {
-        @content;
-    }
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
 }
 
 @mixin for-desktop-up {
-    @media (min-width: $bp-desktop) {
-        @content;
-    }
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
 }

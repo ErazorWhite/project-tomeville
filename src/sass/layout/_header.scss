@@ -1,0 +1,116 @@
+.header {
+  position: absolute;
+  height: 64px;
+  width: 100%;
+  background-color: var(--main-bg-cl);
+  border: 1.5px solid var(--secondary-text-cl);
+  border-radius: 0px 0px 8px 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-width: 320px;
+  max-width: $bp-mobile;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px;
+
+  @include for-tablet-up {
+    width: $bp-tablet;
+    max-width: $bp-desktop;
+    padding: 0px 32px;
+  }
+
+  @include for-desktop-up {
+    height: 72px;
+    width: $bp-desktop;
+    padding: 0px 24px;
+  }
+
+  &__menu-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    min-width: 72px;
+    min-height: 34px;
+    padding: 8px 16px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28;
+
+    letter-spacing: -0.04em;
+    border-radius: 36px;
+    border-color: transparent;
+
+    cursor: pointer;
+    text-transform: uppercase;
+
+    color: var(--secondary-text-cl);
+    fill: var(--secondary-text-cl);
+    background-color: inherit;
+
+    transition: background-color 250ms;
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent-cl);
+      background-color: var(--accent-cl);
+      //   border-color: $brandColor;
+    }
+  }
+  &__btn-shoppingList {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__menu-btn,
+  &__btn-signUp {
+    display: none;
+
+    @media screen and (min-width: 767px) {
+      display: flex;
+      gap: 50px;
+    }
+  }
+
+  &__burger {
+    fill: var(--secondary-text-cl);
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    // transition: fill 250ms $timing-funk;
+
+    &:hover,
+    &:focus {
+      fill: var(--accent-cl);
+    }
+
+    @media screen and (min-width: 767px) {
+      display: none;
+    }
+  }
+  //   }
+  //   &__icon-shoppingList {
+  //     fill: ;
+
+  //     @include desctiption-block($brandColor, 700, 16px, 1.25);
+
+  //     border: 2px solid $primaryWhite;
+  //     border-radius: 25px;
+  //     background-color: $btnBg;
+  //     cursor: pointer;
+
+  //     transition: border-color 250ms $cubic, background-color 250ms;
+
+  //     &:hover,
+  //     &:focus {
+  //       background-color: $primaryWhite;
+  //       border-color: $brandColor;
+  //     }
+}
