@@ -5,85 +5,27 @@
   height: 100%;
   width: 100%;
   min-width: 320px;
-  max-width: 375px;
-  padding: 20px;
-  background: radial-gradient(
-    183.6% 183.01% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
-    #ffffff 100%
-  );
-  transform: translateY(-200%);
-  //   transition: transform 250ms $timing-funk;
+  max-width: $bp-mobile;
+  padding: 40px 20px 20px 20px;
+  background: var(--radial-gradient);
+  transform: translateX(-200%);
+  transition: transform var(--cubic-time);
 
   &.is-open {
     transform: translateY(64px);
+    transition: transform var(--cubic-time);
   }
-  &__user-icon-box {
+
+  &__btn-signUp {
     display: flex;
-    align-items: center;
-    gap: 9px;
-    background-color: transparent;
-    border-color: transparent;
-
-    min-width: 133px;
-    min-height: 37px;
-    padding: 0px;
   }
 
-  &__user-icon {
-    width: 19px;
-    height: 19px;
-    border-radius: 50%;
-  }
-  &__user-name {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.32;
-
-    letter-spacing: -0.02em;
-
-    color: var(--white-cl);
-  }
-  &__btns {
-    display: block;
-    padding-top: 126px;
-
-    padding-left: 93px;
-    padding-right: auto;
-  }
-  &__btn {
-    font-weight: 500;
-    // padding: 0px;
-
-    color: var(--white-cl);
-    fill: var(--white-cl);
-    background-color: inherit;
-
-    transition: background-color 250ms;
-
-    &:hover,
-    &:focus {
-      color: var(--black-cl);
-      fill: var(--black-cl);
-      background-color: var(--accent-cl);
-
-      //   border-color: $brandColor;
-    }
-  }
-
-  &__btn-shoppingList {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
   &__bgImg {
     position: absolute;
     width: 450px;
     height: 439px;
-    left: 0px;
+    left: -65px;
     top: 378px;
-    transform: rotate(-15deg);
 
     background-image: url(/src/images/mob13@1x.png);
     @media (min-device-pixel-ratio: 2),
@@ -92,11 +34,4 @@
       background-image: url(/src/images/mob13@2x.png);
     }
   }
-
-  //   &__container {
-  //     width: 100%;
-  //     min-width: 320px;
-  //     max-width: 375px;
-  //     padding: 20px;
-  //   }
 }

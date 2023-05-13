@@ -1,7 +1,7 @@
 // Breakpoints
-$bp-mobile: 375px; //414
-$bp-tablet: 768px; // 1024
-$bp-desktop: 1440px; //1280
+$bp-mobile: 375px;
+$bp-tablet: 768px;
+$bp-desktop: 1440px;
 
 @mixin for-phone-only {
   @media (max-width: ($bp-tablet - 1px)) {

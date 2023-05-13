@@ -1,25 +1,29 @@
 <header class="header">
-  <a href="./index.html" class="header__logo">
-    <svg class="header__icon" width="109" height="28">
-      <use
-        href="/src/images/symbol-defs.svg#white-theme-logo"
-        class="header__logo-icon-light"
-      ></use>
-      <use
-        href="/src/images/symbol-defs.svg#black-theme-logo"
-        class="header__logo-icon-dark"
-      ></use>
-    </svg>
-  </a>
-  <div class="header__menu-btn">
-    <button type="button" class="header__btn header__btn-home">Home</button>
-    <button type="button" class="header__btn header__btn-shoppingList">
-      Shopping list
-      <svg class="header__icon-shoppingList" width="20" height="20">
-        <use href="/src/images/symbol-defs.svg#basket"></use>
+  <div class="header__nav-box">
+    <a href="./index.html" class="header__logo">
+      <svg class="header__icon" width="109" height="28">
+        <use
+          href="/src/images/symbol-defs.svg#white-theme-logo"
+          class="header__logo-icon-light"
+        ></use>
+        <use
+          href="/src/images/symbol-defs.svg#black-theme-logo"
+          class="header__logo-icon-dark"
+        ></use>
       </svg>
-    </button>
+    </a>
+    <!-- <div class="header__nav-box"></div> -->
+    <div class="header__menu-btn">
+      <button type="button" class="header__btn header__btn-home">Home</button>
+      <button type="button" class="header__btn header__btn-shoppingList">
+        Shopping list
+        <svg class="header__icon-shoppingList" width="20" height="20">
+          <use href="/src/images/symbol-defs.svg#icon-cart"></use>
+        </svg>
+      </button>
+    </div>
   </div>
+
   <div class="switch-container">
     <label id="switch" class="switch">
       <input type="checkbox" id="slider" />
@@ -28,12 +32,19 @@
     <button type="button" class="header__btn-signUp">
       Sign up
       <svg class="header__icon-signUp" width="20" height="20">
-        <use href="/src/images/symbol-defs.svg#right-arrow"></use>
+        <use href="/src/images/symbol-defs.svg#icon-arrow-narrow-right"></use>
       </svg>
     </button>
     <button class="header__burger js-open-menu" type="button">
       <svg width="28" height="28" aria-label="Мобільне меню">
-        <use href="/src/images/symbol-defs.svg#basket"></use>
+        <use
+          href="/src/images/symbol-defs.svg#icon-burger"
+          class="header__burger-menu is-active"
+        ></use>
+        <use
+          href="/src/images/symbol-defs.svg#icon-x-close"
+          class="header__burger-close"
+        ></use>
       </svg>
     </button>
   </div>

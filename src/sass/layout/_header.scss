@@ -28,25 +28,32 @@
     padding: 0px 24px;
   }
 
-  &__menu-btn {
+  &__nav-box {
     display: flex;
     align-items: center;
+
+    @include for-tablet-up {
+      gap: 24px;
+    }
+
+    @include for-desktop-up {
+      gap: 60px;
+    }
   }
 
-  &__logo-icon-light {
+  &__logo-icon-light,
+  &__logo-icon-dark,
+  &__burger-menu,
+  &__burger-close {
     display: none;
   }
 
-  &__logo-icon-dark {
-    display: none;
-  }
   &__btn {
     min-width: 72px;
     min-height: 34px;
     padding: 8px 16px;
 
-    font-style: normal;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 14px;
     line-height: 1.28;
 
@@ -61,13 +68,12 @@
     fill: var(--secondary-text-cl);
     background-color: inherit;
 
-    transition: background-color 250ms;
+    transition: background-color var(--cubic-time);
 
     &:hover,
     &:focus {
+      font-weight: 700;
       background-color: var(--accent-cl);
-      background-color: var(--accent-cl);
-      //   border-color: $brandColor;
     }
   }
   &__btn-shoppingList {
@@ -76,13 +82,35 @@
     gap: 4px;
   }
 
-  &__menu-btn,
-  &__btn-signUp {
+  &__menu-btn {
     display: none;
 
-    @media screen and (min-width: 767px) {
+    @include for-tablet-up {
       display: flex;
-      gap: 50px;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+
+  &__btn-signUp {
+    display: none;
+    justify-content: space-between;
+    width: 184px;
+    height: 48px;
+    padding: 14px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.04em;
+
+    color: var(--white-cl);
+    background-color: var(--blue-cl);
+    border: 1.5px solid var(--black-cl);
+    border-radius: 18px;
+
+    @include for-tablet-up {
+      display: flex;
     }
   }
 
@@ -91,37 +119,18 @@
     background-color: transparent;
     border-color: transparent;
     cursor: pointer;
-    // transition: fill 250ms $timing-funk;
+    transition: fill var(--cubic-time);
 
     &:hover,
     &:focus {
-      fill: var(--accent-cl);
+      fill: var(--blue-cl);
     }
 
-    @media screen and (min-width: 767px) {
+    @include for-tablet-up {
       display: none;
     }
   }
-  //   }
-  //   &__icon-shoppingList {
-  //     fill: ;
-
-  //     @include desctiption-block($brandColor, 700, 16px, 1.25);
-
-  //     border: 2px solid $primaryWhite;
-  //     border-radius: 25px;
-  //     background-color: $btnBg;
-  //     cursor: pointer;
-
-  //     transition: border-color 250ms $cubic, background-color 250ms;
-
-  //     &:hover,
-  //     &:focus {
-  //       background-color: $primaryWhite;
-  //       border-color: $brandColor;
-  //     }
 }
-
-.logo-active {
+.is-active {
   display: block;
 }
