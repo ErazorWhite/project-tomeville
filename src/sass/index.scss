@@ -1,11 +1,11 @@
 // modern-normalize
 @import './common';
-@import './utils/vars';
 
 // Utilities & Base
 @import './base/breakpoints';
 @import './base/container';
 @import './base/shared';
+@import './base/variables';
 
 // Layout
 @import './layout/header';

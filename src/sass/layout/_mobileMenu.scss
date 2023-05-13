@@ -1,18 +1,20 @@
 .mobile-menu {
   position: fixed;
+
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
   min-width: 320px;
-  max-width: $bp-mobile;
-  padding: 40px 20px 20px 20px;
+  width: 100%;
+  padding: 104px 20px 20px 20px;
   background: var(--radial-gradient);
   transform: translateX(-200%);
   transition: transform var(--cubic-time);
+  overflow: hidden;
+  z-index: -1;
 
   &.is-open {
-    transform: translateY(64px);
+    transform: translateY(0px);
     transition: transform var(--cubic-time);
   }
 
@@ -22,10 +24,12 @@
 
   &__bgImg {
     position: absolute;
-    width: 450px;
+    top: 50%;
+    left: 50%;
+    min-width: 450px;
     height: 439px;
-    left: -65px;
-    top: 378px;
+
+    transform: translate(-50%, 30%) rotate(-15deg);
 
     background-image: url(/src/images/mob13@1x.png);
     @media (min-device-pixel-ratio: 2),
@@ -33,5 +37,6 @@
       (min-resolution: 2dppx) {
       background-image: url(/src/images/mob13@2x.png);
     }
+    background-repeat: no-repeat;
   }
 }
