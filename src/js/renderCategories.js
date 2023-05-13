@@ -15,8 +15,8 @@ async function displayBookCategories() {
 
     // Створення розмітки категорій
     const markup = categories
-      .map(category => `<li class="categories-item">${category}</li>`)
-      .join('');
+    .map(category => `<li class="categories-item" data-category="${category}">${category}</li>`)
+    .join('');
 
     // Додавання розмітки до <ul> з початковим елементом
     categoriesList.innerHTML = `<li class="categories-item">Усі категорії</li>${markup}`;
