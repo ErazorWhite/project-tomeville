@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf</title>
+    <!-- Сюда шрифты подключить -->
+    <link rel="stylesheet" href="./sass/index.scss" />
+    <script type="module" src="./index.js"></script>
+    <link
+      type="image/x-icon"
+      href="/src/images/favicon.ico"
+      rel="shortcut icon"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bookshelf</title>
-  <!-- Сюда шрифты подключить -->
-  <link rel="stylesheet" href="./sass/index.scss" />
-  <script type="module" src="./index.js"></script>
-  <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon">
-</head>
+  <body>
+    <!-- Header (загальний для всіх сторінок) -->
+    <include src="./partials/header.html"></include>
+    <main>
+      <a
+        style="
+          color: red;
+          font-size: 24px;
+          text-transform: uppercase;
+          text-decoration: underline;
+        "
+        href="./shopping_list.html"
+        >To Shopping List</a
+      >
+      <!-- Сюда тело разметки кидаем -->
+      <!-- <include src="./partials/home/..."></include> -->
+    </main>
 
-<body>
-  <!-- Header (загальний для всіх сторінок) -->
-  <include src="./partials/header.html"></include>
-  <main>
-
-    <!-- Сюда тело разметки кидаем -->
-    <!-- <include src="./partials/home/..."></include> -->
-  </main>
-  <!-- Скрипты перед закривающим body -->
-  <include src="./partials/scroll-up.html"></include>
-  <!-- <script src="./js/vendors/swiper-bundle.min.js"></script> -->
-  <script src="./js/scroll-up.js"></script>
-</body>
-
+    <!-- Скрипты перед закривающим body -->
+    <include src="./partials/scroll-up.html"></include>
+    <!-- <script src="./js/vendors/swiper-bundle.min.js"></script> -->
+    <script src="./js/scroll-up.js"></script>
+  </body>
 </html>

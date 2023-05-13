@@ -1,30 +1,111 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bookshelf</title>
     <!-- Сюда шрифты подключить -->
     <link rel="stylesheet" href="./sass/index.scss" />
+    <link rel="stylesheet" href="./sass/pages/_shoppingList.scss" />
     <script type="module" src="./index.js"></script>
-    <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon">
-</head>
+    <link
+      type="image/x-icon"
+      href="/src/images/favicon.ico"
+      rel="shortcut icon"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Header (загальний для всіх сторінок) -->
     <include src="./partials/header.html"></include>
 
     <main>
-
-        <!-- Сюда тело разметки кидаем -->
-        <!-- <include src="./partials/shopping_list/..."></include> -->
-
+      <!-- Сюда тело разметки кидаем -->
+      <section class="section">
+        <div class="container shoppingList">
+          <h1 class="shoppingListHeading">
+            <p>Shopping <span class="textInverse">List</span></p>
+          </h1>
+          <ul class="basketList">
+            <li>
+              <article class="basketCard">
+                <div class="imgThumb">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyrhEb7wbEnzeHneLlfCe3aX-shOhqBPLFZueevWSZC6qCJWH7_HYDsXideQwOCyZxhyA&usqp=CAU"
+                    alt="#"
+                  />
+                </div>
+                <div>
+                  <h2 class="cardHeader">Hello Beautiful</h2>
+                  <p class="dump">Hardcover fiction</p>
+                  <p class="description">
+                    In a homage to Louisa May Alcott’s “Little Women,” a young
+                    man’s dark past resurfaces as he gets to the know the family
+                    of his college sweetheart. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Hic at distinctio laboriosam
+                    unde, id, quis officia inventore exercitationem delectus
+                    quae aut temporibus autem labore quod commodi nemo tenetur
+                    praesentium repellendus reprehenderit eligendi aliquid. Et.
+                  </p>
+                  <div class="underscribe">
+                    <p class="author">Ann Napolitano</p>
+                    <ul class="basketBuyLink">
+                      <li>
+                        <a class="buyLink" href="https://www.amazon.com"
+                          ><img
+                            src="./images/modal/image-3@1x.png"
+                            width="16px"
+                            height="16px"
+                            alt="#"
+                          />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="buyLink basketBuyLink"
+                          href="https://www.amazon.com"
+                          ><img
+                            src="./images/modal//image-2@1x.png"
+                            width="16px"
+                            height="16px"
+                            alt="#"
+                          />
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="buyLink basketBuyLink"
+                          href="https://www.amazon.com"
+                          ><img
+                            src="./images/modal/image-1@1x.png"
+                            width="32px"
+                            height="11px"
+                            alt="#"
+                          />
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- <include src="./partials/shopping_list/..."></include> -->
+      <a
+        style="
+          color: red;
+          font-size: 24px;
+          text-transform: uppercase;
+          text-decoration: underline;
+        "
+        href="./index.html"
+        >back to home</a
+      >
     </main>
 
     <!-- Скрипты перед закривающим body -->
     <!-- <script src="./js/vendors/swiper-bundle.min.js"></script> -->
-
-</body>
-
+  </body>
 </html>

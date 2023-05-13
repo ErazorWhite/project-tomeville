@@ -1,0 +1,86 @@
+body {
+  background: #d0d0d0;
+}
+
+.textInverse {
+  color: var(--blue-cl);
+}
+.shoppingListHeading {
+  margin-bottom: 40px;
+}
+.basketList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.basketCard {
+  padding: 14px;
+  display: flex;
+  min-width: 355px;
+  height: 170px;
+  background: #ffffff;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+}
+.imgThumb {
+  margin-right: 14px;
+  min-width: 100px;
+}
+.cardHeader {
+  margin-bottom: 4px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111111;
+}
+.dump {
+  margin-bottom: 8px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
+  color: #b4afaf;
+}
+.description {
+  min-width: 193px;
+  height: 68px;
+  margin-bottom: 14px;
+  overflow: hidden;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: #111111;
+}
+.author {
+  margin-right: 16px;
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  color: #b4afaf;
+}
+.basketBuyLink {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.underscribe {
+  display: flex;
+}
