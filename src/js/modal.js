@@ -5,14 +5,20 @@
 // не забути попередньо додати перевірку на вже наявність такої книги в шопінг літсі і при наявності змінювати кнопку на remove from the shopping list
 // + Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.
 // то саме маємо виводити після успішного додавання книги до локалки.
+import storage from './localStorage';
+storage.save('qwe', 'test');
+storage.save('more', 'more than more');
+const findIncludes = storage.load('qwe');
+console.log(findIncludes);
+
 const openModalBtnEl = document.querySelector('[data-action="open-modal"]');
 const backdropEl = document.querySelector('.js-backdrop');
 const modalEl = document.querySelector('.modal');
 
-const BOOK_IS_IN_LOCAL_STORAGE = true;
-
 openModalBtnEl.addEventListener('click', onCardBookClick);
 backdropEl.addEventListener('click', onBackdropClick);
+
+const BOOK_IS_IN_LOCAL_STORAGE = true;
 
 function onCardBookClick() {
   modalEl.innerHTML = createBookMarckup();
