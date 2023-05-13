@@ -1,16 +1,21 @@
 // modern-normalize
-@import './common';
+@import "./common";
+@import "./utils/vars";
 
 // Utilities & Base
-@import './base/breakpoints';
-@import './base/container';
-@import './base/shared';
-@import './base/variables';
+@import "./base/breakpoints";
+@import "./base/container";
+@import "./base/shared";
+@import "./base/variables";
 
 // Layout
-@import './layout/header';
-@import './layout/logo';
-@import './layout/popup';
+@import "./layout/header";
+@import "./layout/logo";
+@import "./layout/popup";
+@import "./layout/scroll-up";
+
+// Utils
+
 
 // Pages
 // @import "./pages/category/";
