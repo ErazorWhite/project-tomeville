@@ -1,4 +1,4 @@
-// openModalBtnEl - карточка однієї книги, скоріше всього потрібно буде вибирати всі картки, весь блок і вішати на нього слухач,
+// openPopupBtnEl - карточка однієї книги, скоріше всього потрібно буде вибирати всі картки, весь блок і вішати на нього слухач,
 // а вже по таргету чи айді куди ми попали вибирати данй елемент. Освіжити память як вішати слухач на весь блок і які там перевірки
 // на місс клік, поле блоку і на саму картку.
 //добавити кнопку при якій відкривається шопінг ліст Add to shopping list дані якого зберігаються в локал сторедж,
@@ -11,30 +11,30 @@ storage.save('more', 'more than more');
 const findIncludes = storage.load('qwe');
 console.log(findIncludes);
 
-const openModalBtnEl = document.querySelector('[data-action="open-modal"]');
+const openPopupEl = document.querySelector('[data-action="open-popup"]');
 const backdropEl = document.querySelector('.js-backdrop');
-const modalEl = document.querySelector('.modal');
+const popupEl = document.querySelector('.popup');
 
-openModalBtnEl.addEventListener('click', onCardBookClick);
+openPopupEl.addEventListener('click', onCardBookClick);
 backdropEl.addEventListener('click', onBackdropClick);
 
 const BOOK_IS_IN_LOCAL_STORAGE = true;
 
 function onCardBookClick() {
-  modalEl.innerHTML = createBookMarckup();
+  popupEl.innerHTML = createBookMarckup();
   // При кліку по книзі ми відкриваємо модалку і в ній малюємо розмітку, можна добавити лоадер, поки розмітка лаюється,
   // або спочатку малюємо розмітку і вже потім відкриваємо модалку, скоріше всього так, щоб при відкритій модалці під час малювання
   // все не пригало і скакало, а так розмітка готова хлоп і відкрилась модалка намальована вже.
   window.addEventListener('keydown', onEscPress);
-  document.body.classList.add('show-modal');
+  document.body.classList.add('show-popup');
 
-  const closeModalBtnEl = document.querySelector('[data-action="close-modal"]');
-  closeModalBtnEl.addEventListener('click', onCloseBtnClick);
+  const closePopupBtnEl = document.querySelector('[data-action="close-popup"]');
+  closePopupBtnEl.addEventListener('click', onCloseBtnClick);
 }
 
 function onCloseBtnClick() {
   window.removeEventListener('keydown', onEscPress);
-  document.body.classList.remove('show-modal');
+  document.body.classList.remove('show-popup');
 }
 
 function onBackdropClick(e) {
@@ -51,7 +51,7 @@ function onEscPress(e) {
 
 function createBookMarckup() {
   return BOOK_IS_IN_LOCAL_STORAGE
-    ? `<button type="button" data-action="close-modal">Close modal</button><img src="" alt="">
+    ? `<button type="button" data-action="close-popup">Close popup</button><img src="" alt="">
 <title>Book name</title>
 <p>Category</p>
 <p>Short description</p>
@@ -63,7 +63,7 @@ function createBookMarckup() {
 <p class="remove-book-button-show">Congratulations! You have added the book to the shopping list. To delete,
             press the button “Remove from the shopping
             list”.</p>`
-    : `<button type="button" data-action="close-modal">Close modal</button><img src="" alt="">
+    : `<button type="button" data-action="close-popup">Close popup</button><img src="" alt="">
     <title>Book name</title>
 <p>Category</p>
 <p>Short description</p>
