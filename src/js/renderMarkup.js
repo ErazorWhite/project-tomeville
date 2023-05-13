@@ -25,5 +25,3 @@ export default function renderBookCardsMarkup(books) {
   // gallery.insertAdjacentHTML('beforeend', markup);
 }
 
- 
-
