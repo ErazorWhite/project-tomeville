@@ -1,5 +1,6 @@
 // modern-normalize
 @import "./common";
+@import "./utils/vars";
 
 // Utilities & Base
 @import "./base/breakpoints";
@@ -11,7 +12,10 @@
 @import "./layout/header";
 @import "./layout/logo";
 @import "./layout/popup";
-@import "./layout/categories-list";
+@import "./layout/scroll-up";
+
+// Utils
+
 
 // Pages
 // @import "./pages/category/";
