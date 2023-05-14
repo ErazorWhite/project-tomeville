@@ -5,7 +5,6 @@
 @import './base/breakpoints';
 @import './base/container';
 @import './base/shared';
-@import './base/variables';
 
 // Layout
 
@@ -17,9 +16,8 @@
 @import './layout/switcher';
 
 // Utils
-
+@import './utils/vars';
 // Pages
 // @import "./pages/category/";
 // @import "./pages/home/";
 // @import "./pages/shopping_list/";
-
