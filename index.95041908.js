@@ -1,0 +1,2 @@
+let e=()=>{let e=document.querySelector(".progress"),t=document.documentElement.scrollTop,n=document.documentElement.scrollHeight-document.documentElement.clientHeight,d=Math.round(100*t/n);e.style.display=t>100?"grid":"none",e.addEventListener("click",(()=>{document.documentElement.scrollTop=0})),e.style.background=`conic-gradient(var(--blue-cl) ${d}%, #d7d7d7 ${d}%)`};window.addEventListener("scroll",e),window.addEventListener("load",e);
+//# sourceMappingURL=index.95041908.js.map
