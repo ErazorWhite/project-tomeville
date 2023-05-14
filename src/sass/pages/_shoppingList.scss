@@ -15,17 +15,29 @@ body {
   gap: 20px;
 }
 .basketCard {
+  position: relative;
   padding: 14px;
   display: flex;
-  min-width: 355px;
+  width: 355px;
   height: 170px;
   background: #ffffff;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    height: 213px;
+  }
 }
 .imgThumb {
+  overflow: hidden;
   margin-right: 14px;
   min-width: 100px;
+  border-radius: 8px;
+  background-color: tomato;
+  @media screen and (min-width: 768px) {
+    min-width: 116px;
+    height: 165px;
+  }
 }
 .cardHeader {
   margin-bottom: 4px;
@@ -63,9 +75,13 @@ body {
   line-height: 18px;
   letter-spacing: -0.04em;
   color: #111111;
+  @media screen and (min-width: 768px) {
+    min-width: 508px;
+    height: 53px;
+    margin-bottom: 32px;
+  }
 }
 .author {
-  margin-right: 16px;
   font-family: 'DM Sans';
   font-style: italic;
   font-weight: 400;
@@ -83,4 +99,30 @@ body {
 }
 .underscribe {
   display: flex;
+  justify-content: space-between;
+}
+.trashButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  fill: var(--white-cl);
+  background: var(--blue-cl);
+  border: none;
+}
+.basketCard_Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.emptyBasket {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
 }
