@@ -20,7 +20,7 @@ body.show-popup .popup {
   border-radius: 18px;
   transform: translate(-50%, -50%) scale(0.5);
   // Час і кубік потім замінити на змінні, бо їх там змінювали.
-  transition: transform 250ms $cubic;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-popup {
@@ -35,7 +35,7 @@ body.show-popup .popup {
 
   border: none;
   background-color: #ffffff;
-  transition: fill 250ms $cubic;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
@@ -62,7 +62,8 @@ body.show-popup .popup {
   background-color: #ffffff;
   border: 2px solid #4f2ee8;
   border-radius: 40px;
-  transition: color 1000ms $cubic, background-color 1000ms $cubic;
+  transition: color 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {
@@ -86,7 +87,8 @@ body.show-popup .popup {
   background-color: #ffffff;
   border: 2px solid #4f2ee8;
   border-radius: 40px;
-  transition: color 1000ms $cubic, background-color 1000ms $cubic;
+  transition: color 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 1000ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
   &:focus {

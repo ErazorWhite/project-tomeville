@@ -5,20 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bookshelf</title>
-  <!-- Сюда шрифты подключить -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="./sass/index.scss" />
   <script type="module" src="./index.js"></script>
-  <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon">
+  <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon" />
 </head>
 
 <body>
   <!-- Header (загальний для всіх сторінок) -->
   <include src="./partials/header.html"></include>
   <main>
-
-    <!-- Сюда тело разметки кидаем -->
-    <!-- <include src="./partials/home/..."></include> -->
+    <include src="./partials/home/bs_books.html"></include>
   </main>
+  <include src="./partials/mobileMenu.html"></include>
 
   <!-- Скрипты перед закривающим body -->
   <include src="./partials/popup.html"></include>
@@ -26,6 +27,8 @@
   <!-- <script src="./js/vendors/swiper-bundle.min.js"></script> -->
   <script type="module" src="./js/popup.js"></script>
   <script src="./js/scroll-up.js"></script>
+  <script src="./js/styleSwitcher.js"></script>
+  <script src="./js/mobileMenu.js"></script>
 </body>
 
 </html>
