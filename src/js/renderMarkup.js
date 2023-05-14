@@ -1,4 +1,3 @@
-
 export default function renderBookCardsMarkup(books) {
   const markup = books
     .map(
