@@ -1,0 +1,15 @@
+.bs-books {
+    &__title {
+        color: var(--secondary-text-cl);
+
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+        /* identical to box height, or 119% */
+
+        letter-spacing: -0.04em;
+    }
+    &__accent {
+        color: var(--blue-cl);
+    }
+}
