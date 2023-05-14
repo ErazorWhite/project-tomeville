@@ -11,11 +11,15 @@
   transform: translateX(-200%);
   transition: transform var(--cubic-time);
   overflow: hidden;
-  z-index: -1;
+  z-index: 1;
 
   &.is-open {
     transform: translateY(0px);
     transition: transform var(--cubic-time);
+  }
+
+  &.is-open body {
+    overflow: hidden;
   }
 
   &__btn-signUp {
@@ -32,9 +36,7 @@
     transform: translate(-50%, 30%) rotate(-15deg);
 
     background-image: url(/src/images/mob13@1x.png);
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: url(/src/images/mob13@2x.png);
     }
     background-repeat: no-repeat;
