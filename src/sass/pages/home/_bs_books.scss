@@ -33,7 +33,7 @@
         display: none;
 
         @include for-tablet-up {
-            display: block;
+            display: inline-block;
             margin-bottom: 18px;
 
             font-size: 14px;
@@ -65,7 +65,7 @@
             display: none;
         }
         @include for-desktop-up {
-            display: block;
+            display: inline-block;
         }
     }
 
@@ -101,6 +101,12 @@
 
         border-radius: 8px;
         overflow: hidden;
+    }
+
+    &__picture {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     &__box {
