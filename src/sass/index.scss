@@ -1,21 +1,27 @@
 // modern-normalize
-@import "./common";
-@import "./utils/vars";
+@import './common';
+@import './utils/vars';
 
 // Utilities & Base
-@import "./base/breakpoints";
-@import "./base/container";
-@import "./base/shared";
-@import "./base/variables";
+@import './base/breakpoints';
+@import './base/container';
+@import './base/shared';
 
 // Layout
-@import "./layout/header";
-@import "./layout/logo";
-@import "./layout/popup";
+
+@import './layout/header';
+@import './layout/popup';
 @import './layout/book-card';
-@import "./layout/scroll-up";
+@import './layout/scroll-up';
+@import './layout/mobileMenu';
+@import './layout/switcher';
+
+// Utils
+
+// Pages
+// @import "./pages/category/";
+// @import "./pages/home/";
+// @import "./pages/shopping_list/";
 
 // Fonts 
 @import './fonts/stylesheet.css';
-
-
