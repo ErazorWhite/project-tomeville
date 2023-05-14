@@ -97,6 +97,7 @@
     }
 
     &__thumb {
+        height: 80%;
         margin-bottom: 14px;
 
         border-radius: 8px;
@@ -175,5 +176,7 @@
         color: var(--secondary-text-cl);
         border: 2px solid var(--blue-cl);
         border-radius: 40px;
+
+        cursor: pointer;
     }
 }
