@@ -1,4 +1,3 @@
-
 export default function renderBookCardsMarkup(books) {
   const markup = books
     .map(
@@ -24,4 +23,3 @@ export default function renderBookCardsMarkup(books) {
   return markup;
   // gallery.insertAdjacentHTML('beforeend', markup);
 }
-

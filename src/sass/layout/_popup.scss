@@ -1,15 +1,100 @@
-// body.show-popup .popup {
-//   transform: translate(-50%, -50%) scale(1);
-// }
+body.show-popup .popup {
+  transform: translate(-50%, -50%) scale(1);
+}
 
 .popup {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
-  min-width: 400px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 24px;
 
-  background-color: bisque;
+  min-width: 90%;
+  min-height: 90%;
+
+  background: #ffffff;
+  border: 2px solid #111111;
+  border-radius: 18px;
+  transform: translate(-50%, -50%) scale(0.5);
+  // Час і кубік потім замінити на змінні, бо їх там змінювали.
+  transition: transform 250ms $cubic;
+}
+
+.close-popup {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  border: none;
+  background-color: #ffffff;
+  transition: fill 250ms $cubic;
+
+  &:hover,
+  &:focus {
+    fill: #4f2ee8;
+  }
+}
+
+.add-remove-btn-container {
+  text-align: center;
+}
+
+.add-book-button {
+  padding: 14px 28px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  color: #111111;
+  background-color: #ffffff;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  transition: color 1000ms $cubic, background-color 1000ms $cubic;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: #4f2ee8;
+  }
+}
+
+.remove-book-button {
+  padding: 14px 28px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  color: #111111;
+  background-color: #ffffff;
+  border: 2px solid #4f2ee8;
+  border-radius: 40px;
+  transition: color 1000ms $cubic, background-color 1000ms $cubic;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: #4f2ee8;
+  }
+}
+
+.remove-book-text {
+  color: tomato;
 }

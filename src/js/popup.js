@@ -1,40 +1,118 @@
-// openPopupBtnEl - карточка однієї книги, скоріше всього потрібно буде вибирати всі картки, весь блок і вішати на нього слухач,
-// а вже по таргету чи айді куди ми попали вибирати данй елемент. Освіжити память як вішати слухач на весь блок і які там перевірки
-// на місс клік, поле блоку і на саму картку.
-//добавити кнопку при якій відкривається шопінг ліст Add to shopping list дані якого зберігаються в локал сторедж,
-// не забути попередньо додати перевірку на вже наявність такої книги в шопінг літсі і при наявності змінювати кнопку на remove from the shopping list
-// + Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.
-// то саме маємо виводити після успішного додавання книги до локалки.
+import { BookAPI } from './bookAPI';
 import storage from './localStorage';
-storage.save('qwe', 'test');
-storage.save('more', 'more than more');
-const findIncludes = storage.load('qwe');
-console.log(findIncludes);
 
-const openPopupEl = document.querySelector('[data-action="open-popup"]');
+const api = new BookAPI();
+let BOOK_IS_IN_LOCAL_STORAGE = false;
+let KEY_LS;
+let VALUE_LS;
+const { save, load, remove } = storage;
+
+// тестовий контейнер потім тут має бути контенер з книгами, точніше на нього задати даний дата атребут
+const booksContainerEl = document.querySelector(
+  '[data-action="booksContainer"]'
+);
+
 const backdropEl = document.querySelector('.js-backdrop');
-const popupEl = document.querySelector('.popup');
+const markDataContainerEl = document.querySelector(
+  '[data-action="popup-data-markup"]'
+);
+const closePopupBtnEl = document.querySelector('.close-popup');
+const addBookBtnEl = document.querySelector('.add-book-button');
+const removeBookBtnEl = document.querySelector('.remove-book-button');
+const removeBookTextEl = document.querySelector('.remove-book-text');
 
-openPopupEl.addEventListener('click', onCardBookClick);
+booksContainerEl.addEventListener('click', onBooksContainerClick);
 backdropEl.addEventListener('click', onBackdropClick);
+closePopupBtnEl.addEventListener('click', onCloseBtnClick);
+addBookBtnEl.addEventListener('click', onAddBookBtnClick);
+removeBookBtnEl.addEventListener('click', onRemoveBookBtnClick);
 
-const BOOK_IS_IN_LOCAL_STORAGE = true;
+async function onBooksContainerClick(e) {
+  e.preventDefault();
+  if (e.currentTarget === e.target) {
+    return;
+  }
 
-function onCardBookClick() {
-  popupEl.innerHTML = createBookMarckup();
-  // При кліку по книзі ми відкриваємо модалку і в ній малюємо розмітку, можна добавити лоадер, поки розмітка лаюється,
-  // або спочатку малюємо розмітку і вже потім відкриваємо модалку, скоріше всього так, щоб при відкритій модалці під час малювання
-  // все не пригало і скакало, а так розмітка готова хлоп і відкрилась модалка намальована вже.
+  // ------------------------------------
+  const BOOK_ID = e.target.closest('.book-card').dataset.bookId;
+  // console.log(BOOK_ID);
+  // замість цього: '643282b1e85766588626a080'; буде BOOK_ID
+  api.id = '643282b1e85766588626a080';
+  const { book_image, title, author, description, buy_links } =
+    await api.getBooksById();
+  // console.log({ book_image, title, author, description, buy_links });
+  // console.log(buy_links[0]);
+  const urlAmazon = buy_links[0].url;
+  // console.log(urlAmazon);
+  markDataContainerEl.innerHTML = createBookMarkup(author);
+  // -----------------------------------------
+
+  VALUE_LS = title;
+  KEY_LS = 'dsa20344';
+  // save(key, '643282b1e85766588626a080');
+
+  // Звертаємося до локалки і перевіряємо наявність книжки, в залежності від true or undefined показуємо кнопку
+  // додати або видалити
+  BOOK_IS_IN_LOCAL_STORAGE = load(KEY_LS);
+  if (BOOK_IS_IN_LOCAL_STORAGE) {
+    console.log(BOOK_IS_IN_LOCAL_STORAGE);
+    showAddOrRemoveBtn(true);
+  } else {
+    showAddOrRemoveBtn(false);
+  }
+
+  // ----------------------------------------
   window.addEventListener('keydown', onEscPress);
   document.body.classList.add('show-popup');
+}
 
-  const closePopupBtnEl = document.querySelector('[data-action="close-popup"]');
-  closePopupBtnEl.addEventListener('click', onCloseBtnClick);
+function createBookMarkup(author) {
+  return `<img src="" alt="">
+<title>Book name</title>
+<p>Category</p>
+<p>Short description</p>
+<p>${author}</p>
+<a href="">Link Amazon</a>
+<a href="">Link More</a>
+<a href="">Link else</a>`;
+}
+
+// Показуємо кнопку в залежності від значення флажка true or false.
+function showAddOrRemoveBtn(bookInLs) {
+  console.log(bookInLs);
+  if (bookInLs) {
+    removeBookBtnEl.removeAttribute('hidden');
+    removeBookTextEl.removeAttribute('hidden');
+  } else {
+    addBookBtnEl.removeAttribute('hidden');
+  }
+}
+
+function onAddBookBtnClick() {
+  // Записуємо данні в локал сторейдж
+  // Замінюємо кнопку на ремув
+  save(KEY_LS, VALUE_LS);
+  addBookBtnEl.setAttribute('hidden', true);
+  removeBookBtnEl.removeAttribute('hidden');
+  removeBookTextEl.removeAttribute('hidden');
+}
+
+function onRemoveBookBtnClick() {
+  // Видаляємо дані з локалки
+  // Замінюємо кнопку на едд
+  remove(KEY_LS);
+  removeBookBtnEl.setAttribute('hidden', true);
+  removeBookTextEl.setAttribute('hidden', true);
+  addBookBtnEl.removeAttribute('hidden');
 }
 
 function onCloseBtnClick() {
   window.removeEventListener('keydown', onEscPress);
   document.body.classList.remove('show-popup');
+
+  addBookBtnEl.setAttribute('hidden', true);
+  removeBookBtnEl.setAttribute('hidden', true);
+  removeBookTextEl.setAttribute('hidden', true);
 }
 
 function onBackdropClick(e) {
@@ -47,29 +125,4 @@ function onEscPress(e) {
   if (e.code === 'Escape') {
     onCloseBtnClick();
   }
-}
-
-function createBookMarckup() {
-  return BOOK_IS_IN_LOCAL_STORAGE
-    ? `<button type="button" data-action="close-popup">Close popup</button><img src="" alt="">
-<title>Book name</title>
-<p>Category</p>
-<p>Short description</p>
-<p>Author</p>
-<a href="">Link Amazon</a>
-<a href="">Link More</a>
-<a href="">Link else</a>
-<button type="button" class="remove-book-button">Remove from the shopping list</button>
-<p class="remove-book-button-show">Congratulations! You have added the book to the shopping list. To delete,
-            press the button “Remove from the shopping
-            list”.</p>`
-    : `<button type="button" data-action="close-popup">Close popup</button><img src="" alt="">
-    <title>Book name</title>
-<p>Category</p>
-<p>Short description</p>
-<p>Author</p>
-<a href="">Link Amazon</a>
-<a href="">Link More</a>
-<a href="">Link else</a>
-<button type="button" class="add-book-button">Add to shopping list</button>`;
 }

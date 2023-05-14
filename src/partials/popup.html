@@ -1,5 +1,15 @@
-<button type="button" data-action="open-popup">Open popup</button>
 <div class="backdrop js-backdrop">
     <div class="popup">
+        <button type="button" class="close-popup"><svg class="close-popup__icon" width="24" height="24">
+                <use href="/src/images/icons.svg#icon-x-close"></use>
+            </svg></button>
+        <div data-action="popup-data-markup"></div>
+        <div class="add-remove-btn-container"><button type="button" class="add-book-button" hidden>Add to shopping
+                list</button><button type="button" class="remove-book-button" hidden>Remove from the shopping
+                list</button>
+            <p class="remove-book-text" hidden>Congratulations! You have added the book to the shopping list.<br>To
+                delete,
+                press the button “Remove from the shopping list”.</p>
+        </div>
     </div>
 </div>
