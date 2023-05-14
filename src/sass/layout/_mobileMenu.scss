@@ -18,10 +18,6 @@
     transition: transform var(--cubic-time);
   }
 
-  &.is-open body {
-    overflow: hidden;
-  }
-
   &__btn-signUp {
     display: flex;
   }
