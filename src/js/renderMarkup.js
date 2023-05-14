@@ -24,7 +24,6 @@ export default function renderBookCardsMarkup(books) {
 }
 
 export function renderBsBookCardsMarkup(bestBooksList) {
-  bestBooksList.map(({ books }) => console.log(books));
   const markup = bestBooksList
     .map(
       ({ list_name, books }) => `
