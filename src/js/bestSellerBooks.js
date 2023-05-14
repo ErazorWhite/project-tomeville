@@ -9,16 +9,20 @@ function renderBestSellerBooks() {
     '.bs-books__categories-list'
   );
 
-  api.getTopBooks().then(resp => {
-    if (resp.length == 0) {
-      Notify.failure('There are no books, sorry.');
-      return;
-    }
-    renderBsBookCardsMarkup(resp);
-    bestSellersBooksList
-      .insertAdjacentHTML('beforeend', renderBsBookCardsMarkup(resp))
-      .catch(err => Notify.failure(err));
-  });
+  api
+    .getTopBooks()
+    .then(resp => {
+      if (resp.length == 0) {
+        Notify.failure('There are no books, sorry.');
+        return;
+      }
+      renderBsBookCardsMarkup(resp);
+      bestSellersBooksList.insertAdjacentHTML(
+        'beforeend',
+        renderBsBookCardsMarkup(resp)
+      );
+    })
+    .catch(err => Notify.failure(err));;
 }
 
 renderBestSellerBooks();
