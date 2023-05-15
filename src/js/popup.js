@@ -1,9 +1,11 @@
 import { BookAPI } from './bookAPI';
 import storage from './localStorage';
 
-let BOOK_IS_IN_LOCAL_STORAGE;
-let KEY_LS;
-let VALUE_LS;
+let BOOK_ID;
+const KEY_LS = 'booksInShopingList';
+let BOOKS_IDS = {
+  id: [],
+};
 const api = new BookAPI();
 const { save, load, remove } = storage;
 
@@ -33,7 +35,7 @@ async function onBooksContainerClick(e) {
 
   // ------------------------------------
   // Тут робимо запит і передаємо данні на відмальовку у функцію
-  const BOOK_ID = e.target.closest('.book-card').dataset.id;
+  BOOK_ID = e.target.closest('.book-card').dataset.id;
   api.id = BOOK_ID;
   const { book_image, title, author, description, buy_links } =
     await api.getBooksById();
@@ -46,10 +48,10 @@ async function onBooksContainerClick(e) {
 
   // Звертаємося до локалки і перевіряємо наявність книжки, в залежності від true or undefined показуємо кнопку
   // додати або видалити
-  KEY_LS = BOOK_ID;
-  VALUE_LS = title;
-  BOOK_IS_IN_LOCAL_STORAGE = load(KEY_LS);
-  if (BOOK_IS_IN_LOCAL_STORAGE) {
+  BOOKS_IDS = load(KEY_LS) || {
+    id: [],
+  };
+  if (BOOKS_IDS.id.includes(BOOK_ID)) {
     showAddOrRemoveBtn(true);
   } else {
     showAddOrRemoveBtn(false);
@@ -83,7 +85,9 @@ function showAddOrRemoveBtn(bookInLs) {
 function onAddBookBtnClick() {
   // Записуємо данні в локал сторейдж
   // Замінюємо кнопку на ремув
-  save(KEY_LS, VALUE_LS);
+  BOOKS_IDS.id.push(BOOK_ID);
+  save(KEY_LS, BOOKS_IDS);
+
   addBookBtnEl.setAttribute('hidden', true);
   removeBookBtnEl.removeAttribute('hidden');
   removeBookTextEl.removeAttribute('hidden');
@@ -92,7 +96,9 @@ function onAddBookBtnClick() {
 function onRemoveBookBtnClick() {
   // Видаляємо дані з локалки
   // Замінюємо кнопку на едд
-  remove(KEY_LS);
+  const newArrr = BOOKS_IDS.id.filter(item => item !== BOOK_ID);
+  BOOKS_IDS.id = newArrr;
+  save(KEY_LS, BOOKS_IDS);
   removeBookBtnEl.setAttribute('hidden', true);
   removeBookTextEl.setAttribute('hidden', true);
   addBookBtnEl.removeAttribute('hidden');
@@ -118,3 +124,5 @@ function onEscPress(e) {
     onCloseBtnClick();
   }
 }
+
+export { BOOKS_IDS };
