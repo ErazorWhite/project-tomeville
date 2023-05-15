@@ -1,0 +1,145 @@
+.header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 64px;
+  min-width: 320px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 20px;
+
+  background-color: var(--main-bg-cl);
+  border: 1.5px solid var(--secondary-text-cl);
+  border-radius: 0px 0px 8px 8px;
+
+  @include for-tablet-up {
+    min-width: $bp-tablet;
+    max-width: $bp-desktop;
+    padding: 0px 32px;
+  }
+
+  @include for-desktop-up {
+    height: 72px;
+    min-width: $bp-desktop;
+    padding: 0px 24px;
+  }
+
+  &__nav-box {
+    display: flex;
+    align-items: center;
+
+    @include for-tablet-up {
+      gap: 24px;
+    }
+
+    @include for-desktop-up {
+      gap: 60px;
+    }
+  }
+
+  &__logo-icon-light,
+  &__logo-icon-dark,
+  &__burger-menu,
+  &__burger-close {
+    display: none;
+  }
+
+  &__btn {
+    min-width: 72px;
+    min-height: 34px;
+    padding: 8px 16px;
+
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.28;
+
+    letter-spacing: -0.04em;
+    border-radius: 36px;
+    border-color: transparent;
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+
+    color: var(--secondary-text-cl);
+    fill: var(--secondary-text-cl);
+    background-color: inherit;
+
+    transition: background-color var(--cubic-time);
+
+    &:hover,
+    &:focus {
+      font-weight: 700;
+      background-color: var(--accent-cl);
+    }
+  }
+  &__btn-shoppingList {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__menu-btn {
+    display: none;
+
+    @include for-tablet-up {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+
+  &__btn-signUp {
+    display: none;
+    justify-content: space-between;
+    width: 184px;
+    height: 48px;
+    padding: 14px;
+
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -0.04em;
+
+    cursor: pointer;
+
+    color: var(--white-cl);
+    background-color: var(--blue-cl);
+    border: 1.5px solid var(--black-cl);
+    border-radius: 18px;
+
+    @include for-tablet-up {
+      display: flex;
+    }
+  }
+
+  &__burger {
+    fill: var(--secondary-text-cl);
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    transition: fill var(--cubic-time);
+
+    &:hover,
+    &:focus {
+      fill: var(--blue-cl);
+    }
+
+    @include for-tablet-up {
+      display: none;
+    }
+  }
+}
+.is-active {
+  display: block;
+}
