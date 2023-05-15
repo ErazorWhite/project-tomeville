@@ -77,10 +77,14 @@
     transition: background-color var(--cubic-time);
 
     &:hover,
-    &:focus {
+    &:focus,
+    &.active {
       font-weight: 700;
       background-color: var(--accent-cl);
+      color: var(--black-cl);
+      fill: var(--black-cl);
     }
+    
   }
   &__btn-shoppingList {
     display: flex;
