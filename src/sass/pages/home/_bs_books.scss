@@ -112,12 +112,15 @@
 
     &__thumb {
         position: relative;
-        height: 80%;
 
         border-radius: 8px;
         overflow: hidden;
 
         cursor: pointer;
+
+        @include for-desktop-up {
+            height: 256px;
+        }
     }
 
     &__picture {
