@@ -1,8 +1,13 @@
 import { BookAPI } from './bookAPI';
 import { renderBsBookCardsMarkup } from './renderMarkup';
 import { Notify } from 'notiflix';
+import { spinerStart, spinerStop } from './loader';
 
 async function renderBestSellerBooks() {
+<<<<<<< HEAD
+=======
+  spinerStart();
+>>>>>>> main
   const api = new BookAPI();
 
   const bestSellersBooksList = document.querySelector(
@@ -20,6 +25,7 @@ async function renderBestSellerBooks() {
     'beforeend',
     renderBsBookCardsMarkup(resp)
   );
+  spinerStop();
 }
 
 renderBestSellerBooks();

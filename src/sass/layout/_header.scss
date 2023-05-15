@@ -1,5 +1,10 @@
 .header {
   position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,10 +77,14 @@
     transition: background-color var(--cubic-time);
 
     &:hover,
-    &:focus {
+    &:focus,
+    &.active {
       font-weight: 700;
       background-color: var(--accent-cl);
+      color: var(--black-cl);
+      fill: var(--black-cl);
     }
+    
   }
   &__btn-shoppingList {
     display: flex;
