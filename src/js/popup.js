@@ -33,6 +33,9 @@ async function onBooksContainerClick(e) {
   if (e.currentTarget === e.target) {
     return;
   }
+  if (e.target.dataset.role === 'see-more-btn') {
+    return;
+  }
 
   // Тут робимо запит і передаємо данні на відмальовку у функцію
   BOOK_ID = e.target.closest('.book-card').dataset.id;

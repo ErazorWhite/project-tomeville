@@ -4,10 +4,7 @@ import { Notify } from 'notiflix';
 import { spinerStart, spinerStop } from './loader';
 
 async function renderBestSellerBooks() {
-<<<<<<< HEAD
-=======
   spinerStart();
->>>>>>> main
   const api = new BookAPI();
 
   const bestSellersBooksList = document.querySelector(
