@@ -7,7 +7,7 @@ let BOOKS_IDS = {
   id: [],
 };
 const api = new BookAPI();
-const { save, load, remove } = storage;
+const { save, load } = storage;
 
 const booksContainerEl = document.querySelector(
   '[data-action="booksContainer"]'
