@@ -3,6 +3,8 @@ import { BookAPI } from './BookAPI';
 export async function displayBooksByCategory(category) {
   const bookAPI = new BookAPI();
   const booksContainer = document.querySelector('.books-container');
+  const categoryTitle = booksContainer.querySelector('.category-title');
+  const bookList = booksContainer.querySelector('.book-list');
 
   try {
     const books = await bookAPI.getBooksByCategory(category);
@@ -24,19 +26,22 @@ export async function displayBooksByCategory(category) {
           <p class="book-card__title">"${book.title}"</p>
         </div>
         <div>
-          <p>"${book.author}"</p>
+          <p class="book-card__author">"${book.author}"</p>
         </div>
       </div>
       </a>
     </li>`;
     }).join('');
 
+    // Оновлення заголовка з обраною категорією
+    categoryTitle.textContent = category;
+
     // Додаємо розмітку до контейнера з книгами
-    booksContainer.innerHTML = markup;
+    bookList.innerHTML = markup;
   } catch (error) {
     console.error(error);
   }
 }
 
-// Приклад виклику функції для виведення книг з категорії 
-displayBooksByCategory('Paperback Nonfiction');
+// // Приклад виклику функції для виведення книг з категорії 
+// displayBooksByCategory('Paperback Nonfiction');
