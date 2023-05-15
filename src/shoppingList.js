@@ -1,105 +1,97 @@
 import { BookAPI } from "./js/bookAPI";
-console.log("hello");
-const booking = new BookAPI();
-booking.getBooksByCategory();
-console.log(booking.getBooksByCategory());
-  
-LOCALSTORAGE_KEY="";
-let booksArr = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || {};
+const shoppingList = document.querySelector(".basketList");
+const emptyShoppingList = document.querySelector(".emptyBasket");
+import svgTrash from './images/icons.svg';
 
-function createShoppingCardMarkup(booksArr) {
-  
-  if (localStorage.getItem(LOCALSTORAGE_KEY)) {
+const booking = new BookAPI();
+console.log(booking);
+let booksArr = [];
+
+
+ const fetchBooks = async () => {
+  try {
+    const response = await booking.getTopBooks();
      
-    booksArr.map((book) => {
+    booksArr = response[0].books;
+         
+    shoppingList.innerHTML = createShoppingCardMarkup(booksArr);
       
-        `<p>This page is empty, add some books and proceed to order.</p>
-            <picture>
-              <source
-                srcset="./images/emptyList@mobile.png 1x"
-                media="(max-width: 767px)"
-              />
-              <source
-                srcset="./images/emptyList@tab.png 1x"
-                media="(max-width: 1199px)"
-              />
-              <source
-                srcset="./images/emptyList@desk.png 1x"
-                media="(min-width: 1200px)"
-              />
-              <img
-                src="./images/noImage/noImage-mob-large@2x.png"
-                alt="cover"
-              />
-            </picture>`
-        ` <li>
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+fetchBooks();
+
+  
+// LOCALSTORAGE_KEY="";
+// let booksArr = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || {};
+let localStorageArrOfId = "1";
+function createShoppingCardMarkup(booksArr) {
+  if (!localStorageArrOfId) {
+  
+    return `<div class = "emptyShoppingList"><p class = "emptyText">This page is empty, add some books and proceed to order.</p>
+    <div class="thumbEmptyShoppingList"></div></div>
+            `
+  }
+  
+  
+  return booksArr.map(({ author, book_image, description, list_name, title, _id,buy_links}) => 
+    ` <li>
               <article class="basketCard">
                 <button class="trashButton" type="button">
                   <svg width="20px" height="20px">
-                    <use href="./images/icons.svg#icon-trash"></use>
+                    <use href=${svgTrash}#icon-trash></use>
                   </svg>
                 </button>
                 <div class="imgThumb">
                   <img
                     class="basketCard_Image"
-                    src="./images/noImage/noImage-mob@2x.png"
-                    alt="#"
+                    src=${book_image}
+                    alt=${title}
                   />
                 </div>
                 <div>
-                  <h2 class="cardHeader">Hello Beautiful</h2>
+                  <h2 class="title">${title}</h2>
                   <p class="dump">Hardcover fiction</p>
                   <p class="description">
                     In a homage to Louisa May Alcott’s “Little Women,” a young
                     man’s dark past resurfaces as he gets to the know the family
                     of his college sweetheart.
                   </p>
-                  <div class="underscribe">
-                    <p class="author">Ann Napolitano</p>
+                  
+                    <p class="author underscription">${author}</p>
                     <ul class="basketBuyLink">
                       <li>
-                        <a class="buyLink" href="https://www.amazon.com"
-                          ><img
-                            src="./images/modal/image-3@1x.png"
-                            width="16px"
-                            height="16px"
-                            alt="#"
-                          />
+                        <a
+                          href="${buy_links[0].url}">
+                        <div class="thumbAmazon"></div>
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="buyLink basketBuyLink"
-                          href="https://www.amazon.com"
-                          ><img
-                            src="./images/modal//image-2@1x.png"
-                            width="16px"
-                            height="16px"
-                            alt="#"
-                          />
+                        <a                          
+                          href="${buy_links[1].url}"
+                          ><div class="thumbAppleBook"></div>
                         </a>
                       </li>
                       <li>
-                        <a
-                          class="buyLink basketBuyLink"
-                          href="https://www.amazon.com"
-                          ><img
-                            src="./images/modal/image-1@1x.png"
-                            width="32px"
-                            height="11px"
-                            alt="#"
-                          />
+                        <a                         
+                          href="${buy_links[4].url}"
+                          >
+                          <div class="thumbBookshop"></div>
                         </a>
                       </li>
                     </ul>
-                  </div>
+                  
                 </div>
               </article>
             </li>`
-    })
     
-    input.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email || "";
-    textArea.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message || "";
-  }
- 
+  ).join("");
 }
+  //   input.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email || "";
+  //   textArea.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message || "";
+  // }
+ 
+// }
+  // createShoppingCardMarkup();

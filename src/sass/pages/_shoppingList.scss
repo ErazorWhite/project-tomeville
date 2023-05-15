@@ -1,18 +1,38 @@
-body {
-  background: #d0d0d0;
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 104px;
+  padding-bottom: 40px;
+}
+// body {
+//   background: #d0d0d0;
+// }
 
 .textInverse {
   color: var(--blue-cl);
 }
 .shoppingListHeading {
   margin-bottom: 40px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+
+  letter-spacing: -0.04em;
 }
 .basketList {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
+  align-content: center;
 }
 .basketCard {
   position: relative;
@@ -26,6 +46,12 @@ body {
   @media screen and (min-width: 768px) {
     width: 704px;
     height: 213px;
+    padding: 24px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 996px;
+    height: 213px;
+    padding: 24px;
   }
 }
 .imgThumb {
@@ -33,13 +59,15 @@ body {
   margin-right: 14px;
   min-width: 100px;
   border-radius: 8px;
-  background-color: tomato;
   @media screen and (min-width: 768px) {
     min-width: 116px;
     height: 165px;
+    margin-right: 24px;
   }
 }
-.cardHeader {
+.title {
+  height: 18px;
+  overflow: hidden;
   margin-bottom: 4px;
 
   font-family: 'DM Sans';
@@ -76,11 +104,12 @@ body {
   letter-spacing: -0.04em;
   color: #111111;
   @media screen and (min-width: 768px) {
-    min-width: 508px;
     height: 53px;
     margin-bottom: 32px;
+    margin-bottom: 48px;
   }
 }
+
 .author {
   font-family: 'DM Sans';
   font-style: italic;
@@ -91,16 +120,20 @@ body {
   color: #b4afaf;
 }
 .basketBuyLink {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  @media screen and (min-width: 768px) {
+    bottom: 24px;
+    right: 24px;
+  }
 }
-.underscribe {
-  display: flex;
-  justify-content: space-between;
-}
+
 .trashButton {
   position: absolute;
   top: 14px;
@@ -111,9 +144,14 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  fill: var(--white-cl);
   background: var(--blue-cl);
+  fill: var(--white-cl);
+  cursor: pointer;
   border: none;
+  @media screen and (min-width: 768px) {
+    width: 34px;
+    height: 34px;
+  }
 }
 .basketCard_Image {
   width: 100%;
@@ -125,4 +163,125 @@ body {
   flex-wrap: wrap;
   align-content: center;
   flex-direction: column;
+}
+.thumb {
+  width: 16px;
+  height: 16px;
+
+  background-size: 16px 16px;
+  mix-blend-mode: luminosity;
+}
+
+// @media (min-device-pixel-ratio: 2),
+//   (min-resolution: 192dpi),
+//   (min-resolution: 2dppx) {
+//   .box {
+//     background-image: url('photo@2x.png');
+//   }
+// }
+
+.thumbAmazon {
+  width: 32px;
+  height: 11px;
+  background-image: url('../../images/buyLinks/svgAmazonMobile.svg');
+  background-size: cover;
+  mix-blend-mode: luminosity;
+}
+.thumbAppleBook {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../images/buyLinks/svgAppleBooksMobile.svg');
+  background-size: cover;
+  mix-blend-mode: luminosity;
+}
+.thumbBookshop {
+  width: 16px;
+  height: 16px;
+  background-image: url('../../images/buyLinks/svgBookshopMobile.svg');
+  background-size: cover;
+  mix-blend-mode: luminosity;
+}
+.thumbAmazon:hover,
+.thumbBookshop:hover,
+.thumbAppleBook:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+@media (min-width: 768px) {
+  .thumbAmazon {
+    width: 48px;
+    height: 15px;
+    background-image: url('../../images/buyLinks/svgAmazonDesktopTab.svg');
+    background-size: cover;
+    mix-blend-mode: luminosity;
+  }
+  .thumbAppleBook {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../images/buyLinks/svgAppleBooksDesktopTab.svg');
+    background-size: cover;
+    mix-blend-mode: luminosity;
+  }
+  .thumbBookshop {
+    width: 30px;
+    height: 30px;
+    background-image: url('../../images/buyLinks/svgBookshopDesktopTab.svg');
+    background-size: cover;
+    mix-blend-mode: luminosity;
+  }
+}
+.emptyShoppingList {
+  width: 265px;
+  height: 248px;
+  margin: 120px 55px 302px 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 768px) {
+    width: 349px;
+    height: 309px;
+    margin: 140px 55px 302px 55px;
+  }
+}
+
+.thumbEmptyShoppingList {
+  width: 265px;
+  height: 168px;
+  background-image: url('../../images/buyLinks/emptyMobile@1x.png');
+  background-size: cover;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url('../../images/buyLinks/emptyMobile@2x.png');
+  }
+}
+
+@media (min-width: 768px) {
+  .thumbEmptyShoppingList {
+    width: 322px;
+    height: 241px;
+    background-image: url('../../images/buyLinks/emptyDesktopTab@1x.png');
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url('../../images/buyLinks/emptyDesktopTab@2x.png');
+    }
+  }
+}
+
+.emptyText {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 244px;
+  margin-bottom: 14px;
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
 }
