@@ -1,3 +1,4 @@
+
 .swiper {
     padding: 24px 20px;
     margin: 0;
@@ -13,7 +14,7 @@
         padding: 0;
     }
 
-    &__namber {
+    &__number {
         font-family: DM Sans;
         font-weight: 400;
         font-size: 14px;
@@ -76,17 +77,14 @@
 
 
 
-.swiper__container,
+.swiper__wrapper,
 .funds__container {
-    //   height: 490px;
-    //   width: 356px;
     margin: 0;
     padding: 24px 40px;
 }
 
 .hero__icon {
     fill: var(--white-cl);
-    /* padding: 0; */
     margin: 0;
     margin-left: 12px;
 }
@@ -95,6 +93,7 @@
     position: relative;
     width: 335px;
     height: 352px;
+    overflow: hidden;
 
     @media (min-width: $bp-desktop) {
         height: 372px;
@@ -131,7 +130,7 @@
         margin: 0;
     }
     &__container {
-        /* position: inherit; */
+
         bottom: 22px;
         left: 151px;
     }
@@ -147,30 +146,8 @@
     margin: 0;
 
     border-radius: 50%;
-    // border: 1px solid rgba(0,0,0,.1);
     padding: 0;
-    // background-color: #fff;
+
     fill: rgba(79, 46, 232, 1);
-    //   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    //     -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    //   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    //     -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    //   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    //     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    //   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    //     fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    //     -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-//   .close__icon{
-//     fill: rgba(79, 46, 232, 1);
 
-//   }
-
-// .button {
-//     position: absolute;
-//     width: 38px;
-//     height: 38px;
-//     background-color: var(--white-cl);
-//     border: 1px solid rgba(0, 0, 0, 0.1);
-//     cursor:pointer;
-// }
