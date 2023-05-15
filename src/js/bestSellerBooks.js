@@ -1,7 +1,7 @@
 import { BookAPI } from './bookAPI';
 import { renderBsBookCardsMarkup } from './renderMarkup';
 import { Notify } from 'notiflix';
-import { spinerStart, spinerStop } from './Loader';
+import { spinerStart, spinerStop } from './loader';
 
 async function renderBestSellerBooks() {
   spinerStart();
