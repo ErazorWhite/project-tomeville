@@ -1,0 +1,21 @@
+body.show-popup .backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.backdrop {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(17, 17, 17, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}

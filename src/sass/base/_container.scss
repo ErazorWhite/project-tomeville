@@ -1,18 +1,19 @@
 .container {
   min-width: 320px;
-  //   max-width: $bp-mobile;
+  max-width: $bp-mobile;
   margin-left: auto;
   margin-right: auto;
-  padding: 0px 15px;
+  padding: 0px 20px;
 
   @include for-tablet-up {
     width: $bp-tablet;
-    // max-width: $bp-desktop;
-    padding: 0px 47px;
+    max-width: $bp-desktop;
+    padding: 0px 32px;
   }
 
   @include for-desktop-up {
     width: $bp-desktop;
-    padding: 0px 85px;
+    padding-left: 40px;
+    padding-right: 24px;
   }
 }

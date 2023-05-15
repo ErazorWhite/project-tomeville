@@ -6,17 +6,18 @@
 @import './base/breakpoints';
 @import './base/container';
 @import './base/shared';
-@import './base/variables';
 
 // Layout
 @import './layout/header';
-@import './layout/logo';
 @import './layout/popup';
+@import './layout/backdrop';
+@import './layout/book-card';
 @import './layout/scroll-up';
+@import './layout/mobileMenu';
+@import './layout/switcher';
 
-// Utils
+// Fonts
+@import './fonts/stylesheet.css';
 
 // Pages
-// @import "./pages/category/";
-// @import "./pages/home/";
-// @import "./pages/shopping_list/";
+@import './pages/home/bs_books.scss';
