@@ -33,7 +33,7 @@ displayBookCategories();
 // Додаємо слухач на список
 
 const categoriesList = document.querySelector('.categories-list');
-const booksContainer = document.querySelector('.books-container');
+const booksContainer = document.querySelector('.js-books-container');
 
 categoriesList.addEventListener('click', function(event) {
   // Перевіряємо, який елемент було клікнуто
