@@ -23,10 +23,7 @@ async function renderBestSellerBooks() {
     'beforeend',
     renderBsBookCardsMarkup(resp)
   );
+  spinerStop();
 }
 
-renderBestSellerBooks().then(spinerStop);
-
-console.log('BEFORE');
 renderBestSellerBooks();
-console.log('AFTER');
