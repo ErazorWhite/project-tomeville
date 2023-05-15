@@ -5,7 +5,7 @@ const sliderContainer = document.querySelector('.swiper-wrapper');
 const swiper = new Swiper(sliderContainer, {
   slidesPerView: 3,
   spaceBetween: 10,
-  direction: 'horizontal',
+  direction: 'vertical',
   loop: true,
   navigation: {
     nextEl: '.swiper-button-next', 
