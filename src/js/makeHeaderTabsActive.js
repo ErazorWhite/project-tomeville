@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Проходимся по всем кнопкам и проверяем, соответствует ли их текст кнопки текущему пути
   buttons.forEach(function (button) {
-    if (button.textContent.trim() === 'Home' && path === '/index.html') {
+    if (button.textContent.trim() === 'Home' && path === '/') {
       // Добавляем класс "active" для подсветки активной вкладки
       button.classList.add('active');
     } else if (
       button.textContent.trim() === 'Shopping list' &&
-      path === '/shoppingList.html'
+      path === '/shopping_list.html'
     ) {
       // Добавляем класс "active" для подсветки активной вкладки
       button.classList.add('active');
