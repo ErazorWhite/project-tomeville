@@ -11,25 +11,62 @@
   <link rel="stylesheet" href="./sass/index.scss" />
   <script type="module" src="./index.js"></script>
   <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon" />
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .mySwiper {
+        margin-top: 100px;
+        max-width: 500px;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+
 </head>
+
 <body>
-  <include src="./partials/header.html"></include>
   <main>
-    <include src="./partials/home/bs_books.html"></include>
+
     <include src="./partials/benefitFounds.html"></include>
+
   </main>
-  <include src="./partials/mobileMenu.html"></include>
-  <include src="./partials/scroll-up.html"></include>
-
   <script type="module" src="./js/benefitFounds.js"></script>
-  <script type="module" src="./js/scroll-up.js"></script>
-  <script type="module" src="./js/styleSwitcher.js"></script>
-  <script type="module" src="./js/mobileMenu.js"></script>
-  <script type="module" src="./js/loader.js"></script>
 </body>
 
 
 
 </body>
+
 </html>
-

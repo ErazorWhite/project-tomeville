@@ -1,23 +1,11 @@
 import Swiper from 'swiper';
 
-const sliderContainer = document.querySelector('.swiper-wrapper');
+import 'swiper/swiper-bundle.css';
 
-const swiper = new Swiper(sliderContainer, {
+var swiper = new Swiper('.mySwiper', {
   slidesPerView: 3,
-  spaceBetween: 10,
-  direction: 'vertical',
-  loop: true,
   navigation: {
-    nextEl: '.swiper-button-next', 
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
-  breakpoints: {
-    640: {
-      slidesPerView: 4,
-      spaceBetween: 20
-    },
-    1024: {
-      slidesPerView: 6,
-      spaceBetween: 40
-    }
-  }
 });
