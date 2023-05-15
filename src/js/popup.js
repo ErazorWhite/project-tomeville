@@ -1,5 +1,6 @@
 import { BookAPI } from './bookAPI';
 import storage from './localStorage';
+import { createBookMarkup } from './createMarkupModalShopList';
 
 let BOOK_ID;
 const KEY_LS = 'booksInShopingList';
@@ -33,20 +34,22 @@ async function onBooksContainerClick(e) {
     return;
   }
 
-  // ------------------------------------
   // Тут робимо запит і передаємо данні на відмальовку у функцію
   BOOK_ID = e.target.closest('.book-card').dataset.id;
   api.id = BOOK_ID;
   const { book_image, title, author, description, buy_links } =
     await api.getBooksById();
-  // console.log({ book_image, title, author, description, buy_links });
-  // console.log(buy_links[0]);
-  // const urlAmazon = buy_links[0].url;
-  // console.log(urlAmazon);
-  markDataContainerEl.innerHTML = createBookMarkup(author);
-  // -----------------------------------------
+  markDataContainerEl.innerHTML = createBookMarkup(
+    book_image,
+    title,
+    author,
+    description,
+    buy_links[0].url,
+    buy_links[1].url,
+    buy_links[2].url
+  );
 
-  // Звертаємося до локалки і перевіряємо наявність книжки, в залежності від true or undefined показуємо кнопку
+  // Звертаємося до локалки і перевіряємо наявність книжки, в залеж. від відповіді виводим кнопку
   // додати або видалити
   BOOKS_IDS = load(KEY_LS) || {
     id: [],
@@ -59,17 +62,6 @@ async function onBooksContainerClick(e) {
 
   window.addEventListener('keydown', onEscPress);
   document.body.classList.add('show-popup');
-}
-
-function createBookMarkup(author) {
-  return `<img src="" alt="">
-<title>Book name</title>
-<p>Category</p>
-<p>Short description</p>
-<p>${author}</p>
-<a href="">Link Amazon</a>
-<a href="">Link More</a>
-<a href="">Link else</a>`;
 }
 
 // Показуємо кнопку в залежності від значення флажка true or false.
