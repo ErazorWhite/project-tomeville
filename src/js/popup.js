@@ -1,17 +1,15 @@
 import { BookAPI } from './bookAPI';
 import storage from './localStorage';
 
-const api = new BookAPI();
-let BOOK_IS_IN_LOCAL_STORAGE = false;
+let BOOK_IS_IN_LOCAL_STORAGE;
 let KEY_LS;
 let VALUE_LS;
+const api = new BookAPI();
 const { save, load, remove } = storage;
 
-// тестовий контейнер потім тут має бути контенер з книгами, точніше на нього задати даний дата атребут
 const booksContainerEl = document.querySelector(
   '[data-action="booksContainer"]'
 );
-
 const backdropEl = document.querySelector('.js-backdrop');
 const markDataContainerEl = document.querySelector(
   '[data-action="popup-data-markup"]'
@@ -34,34 +32,29 @@ async function onBooksContainerClick(e) {
   }
 
   // ------------------------------------
-  const BOOK_ID = e.target.closest('.book-card').dataset.bookId;
-  // console.log(BOOK_ID);
-  // замість цього: '643282b1e85766588626a080'; буде BOOK_ID
-  api.id = '643282b1e85766588626a080';
+  // Тут робимо запит і передаємо данні на відмальовку у функцію
+  const BOOK_ID = e.target.closest('.book-card').dataset.id;
+  api.id = BOOK_ID;
   const { book_image, title, author, description, buy_links } =
     await api.getBooksById();
   // console.log({ book_image, title, author, description, buy_links });
   // console.log(buy_links[0]);
-  const urlAmazon = buy_links[0].url;
+  // const urlAmazon = buy_links[0].url;
   // console.log(urlAmazon);
   markDataContainerEl.innerHTML = createBookMarkup(author);
   // -----------------------------------------
 
-  VALUE_LS = title;
-  KEY_LS = 'dsa20344';
-  // save(key, '643282b1e85766588626a080');
-
   // Звертаємося до локалки і перевіряємо наявність книжки, в залежності від true or undefined показуємо кнопку
   // додати або видалити
+  KEY_LS = BOOK_ID;
+  VALUE_LS = title;
   BOOK_IS_IN_LOCAL_STORAGE = load(KEY_LS);
   if (BOOK_IS_IN_LOCAL_STORAGE) {
-    console.log(BOOK_IS_IN_LOCAL_STORAGE);
     showAddOrRemoveBtn(true);
   } else {
     showAddOrRemoveBtn(false);
   }
 
-  // ----------------------------------------
   window.addEventListener('keydown', onEscPress);
   document.body.classList.add('show-popup');
 }
@@ -79,7 +72,6 @@ function createBookMarkup(author) {
 
 // Показуємо кнопку в залежності від значення флажка true or false.
 function showAddOrRemoveBtn(bookInLs) {
-  console.log(bookInLs);
   if (bookInLs) {
     removeBookBtnEl.removeAttribute('hidden');
     removeBookTextEl.removeAttribute('hidden');

@@ -3,7 +3,6 @@ import { renderBsBookCardsMarkup } from './renderMarkup';
 import { Notify } from 'notiflix';
 
 async function renderBestSellerBooks() {
-  console.log('Function is working: renderBestSellerBooks');
   const api = new BookAPI();
 
   const bestSellersBooksList = document.querySelector(
@@ -23,6 +22,4 @@ async function renderBestSellerBooks() {
   );
 }
 
-console.log('BEFORE');
 renderBestSellerBooks();
-console.log('AFTER');
