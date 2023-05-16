@@ -36,3 +36,7 @@ export function renderBsBookCardsMarkup(bestBooksList) {
     .join('');
   return markup;
 }
+
+export const bestSellersInitMarkup = `<h1 class="bs-books__headline">Best Sellers <span class="bs-books__accent">Books</span></h1>
+        <ul class="bs-books__categories-list" data-action="booksContainer">
+        </ul>`;
