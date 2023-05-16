@@ -3,7 +3,7 @@ import { renderBsBookCardsMarkup } from './renderMarkup';
 import { Notify } from 'notiflix';
 import { spinerStart, spinerStop } from './spinner';
 
-async function renderBestSellerBooks() {
+export async function renderBestSellerBooks() {
   spinerStart();
   const api = new BookAPI();
 
