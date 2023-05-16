@@ -38,6 +38,19 @@
 
 }
 
+.categories-item:hover,
+.categories-item:focus
+ {
+    font-weight: 700;
+font-size: 16px;
+line-height: 1.12;
+
+letter-spacing: -0.02em;
+text-transform: uppercase;
+
+color: var(--blue-cl);
+}
+
 .categories-item:not(:last-child) {
 margin-bottom: 24px;
 
