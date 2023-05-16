@@ -38,3 +38,25 @@
 .categories-item:not(:last-child) {
 margin-bottom: 24px;
 }
+
+.books__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @include for-tablet-up {
+        gap: 25px;
+    }
+    @include for-desktop-up {
+        gap: 24px;
+    }
+}
+
+.books__list li:nth-child(n + 4) {
+    @include for-tablet-up {
+        // display: none;
+    }
+    @include for-desktop-up {
+        display: inline-block;
+    }
+}
