@@ -48,7 +48,7 @@ export async function displayBooksByCategory(category) {
 
     const span = document.createElement('span');
     span.textContent = ` ${lastElement}` ;
-    console.log(span.textContent);
+    // console.log(span.textContent);
 
     const accentLastWord = categoryTitle.appendChild(span);
     accentLastWord.classList.add("bs-books__accent");

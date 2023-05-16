@@ -66,3 +66,15 @@ margin-bottom: 24px;
         display: inline-block;
     }
 }
+
+.current_category {
+    font-family: inherit;
+font-weight: 700;
+font-size: 16px;
+line-height: 1.12;
+
+letter-spacing: -0.02em;
+text-transform: uppercase;
+
+color: var(--blue-cl);
+}

@@ -33,12 +33,14 @@ displayBookCategories();
 // Додаємо слухач на список
 
 const categoriesList = document.querySelector('.categories-list');
-const booksContainer = document.querySelector('.js-books-container');
+// const booksContainer = document.querySelector('.js-books-container');
 
 categoriesList.addEventListener('click', function(event) {
   // Перевіряємо, який елемент було клікнуто
   if (event.target.classList.contains('categories-item')) {
     const category = event.target.dataset.category;
+    console.log(event.target);
+    // category.classList.add("current_category");
 
     // Викликаємо функцію для відображення книг за обраною категорією
     displayBooksByCategory(category);
