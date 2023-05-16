@@ -83,7 +83,7 @@ body.show-popup .popup {
 .popup-title {
   margin: 0 0 4px 0;
 
-  @extend %primary-title-text;
+  @extend %primary-title-text !optional;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 0 0 8px 0;
@@ -93,7 +93,7 @@ body.show-popup .popup {
 .popup-author {
   margin: 0 0 18px 0;
 
-  @extend %primary-author-name;
+  @extend %primary-author-name !optional;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 0 0 20px 0;
@@ -103,7 +103,7 @@ body.show-popup .popup {
 .popup-description {
   margin: 0 0 14px 0;
 
-  @extend %primary-description;
+  @extend %primary-description !optional;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 0 0 20px 0;
@@ -131,7 +131,7 @@ body.show-popup .popup {
 .add-book-button {
   padding: 14px 28px;
 
-  @extend %button-text;
+  @extend %button-text !optional;
 
   background-color: var(--white-cl);
   border: 2px solid var(--blue-cl);
@@ -149,7 +149,7 @@ body.show-popup .popup {
   margin: 0 0 8px 0;
   padding: 14px 28px;
 
-  @extend %button-text;
+  @extend %button-text !optional;
 
   background-color: var(--white-cl);
   border: 2px solid var(--blue-cl);
@@ -164,5 +164,5 @@ body.show-popup .popup {
 }
 
 .remove-book-text {
-  @extend %tertiary-text;
+  @extend %tertiary-text !optional;
 }
