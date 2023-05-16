@@ -10,6 +10,7 @@
         }
 
         background-color: var(--main-bg-cl);
+        transition: background-color var(--cubic-time);
 
         @extend .container;
     }
@@ -24,6 +25,7 @@
         letter-spacing: -0.04em;
 
         color: var(--secondary-text-cl);
+        transition: color var(--cubic-time);
 
         @include for-tablet-up {
             font-size: 48px;
@@ -209,7 +211,7 @@
 
         cursor: pointer;
 
-        transition: color 250ms ease;
+        transition: color var(--cubic-time);
 
         &:hover,
         &:focus {

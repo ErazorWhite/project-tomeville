@@ -7,9 +7,6 @@ body.show-popup .popup {
   top: 50%;
   left: 50%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 40px 24px;
 
   background: var(--white-cl);
@@ -18,15 +15,10 @@ body.show-popup .popup {
   transform: translate(-50%, -50%) scale(0.5);
   transition: transform var(--cubic-time);
 
-  @media screen and (min-width: $bp-mobile) {
-    width: 335px;
-    height: 806px;
-  }
-
   @media screen and (min-width: $bp-tablet) {
     padding: 40px 40px;
-    width: 579px;
-    height: 501px;
+
+    min-width: 579px;
   }
 }
 
@@ -51,20 +43,24 @@ body.show-popup .popup {
 }
 
 .popup-box {
+  width: 287px;
+
   @media screen and (min-width: $bp-tablet) {
     display: flex;
+    width: 100%;
+    margin: 0 0 40px 0;
   }
 }
 
 .popup-box-img {
   margin: 0 auto 14px auto;
 
-  width: 287px;
+  min-width: 287px;
   height: 408px;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 0 24px 0 0;
-    width: 192px;
+    min-width: 192px;
     height: 281px;
   }
 }
@@ -76,7 +72,7 @@ body.show-popup .popup {
 
 .popup-text {
   @media screen and (min-width: $bp-tablet) {
-    width: 279px;
+    width: 100%;
   }
 }
 
@@ -113,15 +109,15 @@ body.show-popup .popup {
 .popup-img-links {
   display: flex;
   align-items: center;
+  margin: 0 0 40px 0;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin: 0;
+  }
 }
 
 .popup-link:not(:last-child) {
   margin: 0 20px 0 0;
-}
-
-.popup-link {
-  font-size: 10px;
-  line-height: 12px;
 }
 
 .add-remove-btn-container {
@@ -129,8 +125,6 @@ body.show-popup .popup {
 }
 
 .add-book-button {
-  padding: 14px 28px;
-
   @extend %button-text;
 
   background-color: var(--white-cl);
@@ -147,7 +141,6 @@ body.show-popup .popup {
 
 .remove-book-button {
   margin: 0 0 8px 0;
-  padding: 14px 28px;
 
   @extend %button-text;
 
@@ -164,5 +157,7 @@ body.show-popup .popup {
 }
 
 .remove-book-text {
+  text-align: center;
+
   @extend %tertiary-text;
 }
