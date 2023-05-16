@@ -3,22 +3,27 @@
   height: 352px;
   padding: 24px 40px 20px;
 
+  margin-left: auto;
+  margin-right: auto;
+  
   display: flex;
   flex-direction: column;
-
+  
   border-radius: 16px;
   box-shadow: 0px 10px 10px #f5f5f71a;
   background: var(--radial-gradient);
-
+  
   @media screen and (min-width: 768px) {
     max-width: none;
     width: 335px;
     height: 472px;
     padding: 24px 40px 14px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @media screen and (min-width: 1440px) {
-    width: 356px;
+    max-width: 356px;
     height: 490px;
     padding: 24px 40px;
   }

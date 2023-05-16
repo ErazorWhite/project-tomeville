@@ -1,8 +1,28 @@
+.main__container {
+    @include for-desktop-up {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: $bp-desktop;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
 .content__container {
     display: flex;
     flex-direction: column;
-
-    @include for-desktop-up {
+    gap: 40px;
+    justify-content: center;
+    
+    @include for-tablet-up {
+        padding-top: 112px;
         flex-direction: row;
+    }
+    
+    @include for-desktop-up {
+        flex-direction: column;
+        justify-content: start;
     }
 }
