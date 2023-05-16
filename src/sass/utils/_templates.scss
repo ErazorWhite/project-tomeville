@@ -1,0 +1,44 @@
+%primary-title-text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+
+  color: var(--black-cl);
+}
+
+%tertiary-text {
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: -0.04em;
+
+  color: rgba(17, 17, 17, 0.5);
+}
+
+%primary-author-name {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+
+  color: var(--main-text-cl);
+}
+
+%primary-description {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+
+  color: var(--black-cl);
+}
+
+%button-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  color: var(--black-cl);
+}

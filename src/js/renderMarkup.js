@@ -1,3 +1,5 @@
+import noImg from '../images/noImage/noImage-desk@1x.png';
+
 export default function renderBookCardsMarkup(books) {
   const markup = books
     .map(
@@ -37,9 +39,7 @@ export function renderBsBookCardsMarkup(bestBooksList) {
               <p class="bs-books__category">${list_name}</p>
               <a class="bs-books__link" href="#">
                   <div class="bs-books__thumb">
-                      <img src="${
-                        book_image || 'src/images/noimage/noImage-desk@2x.png'
-                      }" alt="book cover: ${
+                      <img src="${book_image || noImg}" alt="book cover: ${
                 title || 'No title'
               }"class="bs-books__picture" width="335" height="485">
                       <p class="bs-books__view">quick view</p>
