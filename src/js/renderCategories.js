@@ -20,7 +20,7 @@ async function displayBookCategories() {
     .join('');
 
     // Додавання розмітки до <ul> з початковим елементом
-    categoriesList.innerHTML = `<li class="categories-item">Усі категорії</li>${markup}`;
+    categoriesList.innerHTML = `<li class="categories-item">All categories</li>${markup}`;
   } catch (error) {
     console.error(error);
   }
