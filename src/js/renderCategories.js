@@ -1,6 +1,8 @@
 import { BookAPI } from './BookAPI';
 import { displayBooksByCategory } from './renderBooksByCategory';
 
+let currentCategory = null; // Змінна для зберігання посилання на поточний елемент категорії
+
 // Функція для отримання та відображення категорій книг
 async function displayBookCategories() {
   const bookAPI = new BookAPI();
@@ -16,11 +18,20 @@ async function displayBookCategories() {
 
     // Створення розмітки категорій
     const markup = categories
-    .map(category => `<li class="categories-item" data-category="${category}">${category}</li>`)
-    .join('');
+      .map(
+        category =>
+          `<li class="categories-item" data-category="${category}">${category}</li>`
+      )
+      .join('');
 
     // Додавання розмітки до <ul> з початковим елементом
     categoriesList.innerHTML = `<li class="categories-item">All categories</li>${markup}`;
+
+    // Додаємо обробник подій кліку до кожного елемента категорії
+    const categoryItems = document.querySelectorAll('.categories-item');
+    categoryItems.forEach(item => {
+      item.addEventListener('click', handleCategoryClick);
+    });
   } catch (error) {
     console.error(error);
   }
@@ -29,20 +40,24 @@ async function displayBookCategories() {
 // Виклик функції для відображення категорій книг
 displayBookCategories();
 
+// Функція, яка буде викликатися при кліку на елемент категорії
+function handleCategoryClick(event) {
+  // Перевіряємо, чи був клік на іншому елементі категорії
+  if (currentCategory !== event.target) {
+    // Видаляємо клас "current_category" з попереднього поточного елемента
+    if (currentCategory) {
+      currentCategory.classList.remove('current_category');
+    }
 
-// Додаємо слухач на список
+    // Додаємо клас "current_category" до нового поточного елемента
+    event.target.classList.add('current_category');
+    
+    // Зберігаємо посилання на новий поточний елемент
+    currentCategory = event.target;
 
-const categoriesList = document.querySelector('.categories-list');
-// const booksContainer = document.querySelector('.js-books-container');
-
-categoriesList.addEventListener('click', function(event) {
-  // Перевіряємо, який елемент було клікнуто
-  if (event.target.classList.contains('categories-item')) {
     const category = event.target.dataset.category;
-    console.log(event.target);
-    // category.classList.add("current_category");
 
     // Викликаємо функцію для відображення книг за обраною категорією
     displayBooksByCategory(category);
   }
-});
+}
