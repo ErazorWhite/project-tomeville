@@ -1,4 +1,4 @@
-import { BookAPI } from './BookAPI';
+import { BookAPI } from './bookAPI';
 import { displayBooksByCategory } from './renderBooksByCategory';
 import { spinerStart, spinerStop } from './spinner';
 

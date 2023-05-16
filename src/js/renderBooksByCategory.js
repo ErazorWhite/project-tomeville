@@ -1,4 +1,4 @@
-import { BookAPI } from './BookAPI';
+import { BookAPI } from './bookAPI';
 
 export async function displayBooksByCategory(category) {
   const bookAPI = new BookAPI();
