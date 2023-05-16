@@ -33,7 +33,7 @@ export function renderBsBookCardsMarkup(bestBooksList) {
           ${books
             .map(
               ({ _id, list_name, author, book_image, title }) => `
-              <li class="bs-books__item data-id="${_id}">
+              <li class="bs-books__item book-card" data-id="${_id}">
               <p class="bs-books__category">${list_name}</p>
               <a class="bs-books__link" href="#">
                   <div class="bs-books__thumb">
