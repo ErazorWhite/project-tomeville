@@ -12,6 +12,8 @@
         height: 472px;
         margin-top: 112px;
         padding: 0 32px;
+        margin-left: 0;
+        margin-right: 0;
     } 
 
     @include for-desktop-up {
@@ -37,6 +39,10 @@
 
 .categories-item:not(:last-child) {
 margin-bottom: 24px;
+
+@include for-tablet-up {
+    margin-bottom: 32px;
+}
 }
 
 .books__list {

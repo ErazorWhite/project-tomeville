@@ -34,20 +34,25 @@ export async function displayBooksByCategory(category) {
     // Оновлення заголовка з обраною категорією
 
     categoryTitle.textContent = category;
-//     // console.log(categoryTitle.textContent);
-//     const array = categoryTitle.textContent.split(' ');
-//     const lastElement = array[array.length-1];
-//     // console.log(lastElement);
 
-//     array.pop();
-//     const updatedTitle = array.join(' ');
-//     // console.log(updatedTitle);
-//     categoryTitle.textContent = updatedTitle;
+    const array = categoryTitle.textContent.split(' ');
+    const lastElement = array[array.length-1];
 
-//     titleLastWord.textContent = lastElement;
-//     console.dir(categoryTitle);
-//     console.dir(titleLastWord);
-// console.log(titleLastWord.textContent);
+    array.pop();
+
+    const updatedTitle = array.join(' ');
+
+    categoryTitle.textContent = updatedTitle;
+
+    // titleLastWord.textContent = lastElement;
+
+    const span = document.createElement('span');
+    span.textContent = ` ${lastElement}` ;
+    console.log(span.textContent);
+
+    const accentLastWord = categoryTitle.appendChild(span);
+    accentLastWord.classList.add("bs-books__accent");
+    // console.log(titleLastWord.textContent);
 
 
     // Додаємо розмітку до контейнера з книгами
