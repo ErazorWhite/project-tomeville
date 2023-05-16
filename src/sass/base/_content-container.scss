@@ -1,0 +1,8 @@
+.content__container {
+    display: flex;
+    flex-direction: column;
+
+    @include for-desktop-up {
+        flex-direction: row;
+    }
+}
