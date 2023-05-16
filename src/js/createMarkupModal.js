@@ -23,14 +23,20 @@ export function createBookMarkup(
     <p class="popup-author">${author || 'No author'}</p>
     <p class="popup-description">${description || 'No description'}</p>
     <div class="popup-img-links">
-        <a href="${urlAmaz}" class="popup-link" target="_blank" rel="noreferrer noopener">
+        <a href="${
+          urlAmaz || 'https://www.kualo.co.uk/404'
+        }" class="popup-link" target="_blank" rel="noreferrer noopener">
             <img srcset="${imgAmaz1x} 1x, ${imgAmaz2x} 2x" src="${imgAmaz1x}" alt="Amazon shop" width="62"
                 height="19" />
         </a>
-        <a href="${urlApBooks}" class="popup-link" target="_blank" rel="noreferrer noopener"><img
+        <a href="${
+          urlApBooks || 'https://www.kualo.co.uk/404'
+        }" class="popup-link" target="_blank" rel="noreferrer noopener"><img
                 srcset="${imgApBooks1x} 1x, ${imgApBooks2x} 2x" src="${imgApBooks1x}" alt="Apple Books shop" width="33"
                 height="32" /></a>
-        <a href="${urlBarnAndNob}" class="popup-link" target="_blank" rel="noreferrer noopener"><img
+        <a href="${
+          urlBarnAndNob || 'https://www.kualo.co.uk/404'
+        }" class="popup-link" target="_blank" rel="noreferrer noopener"><img
                 srcset="${imgBarnAndNob1x} 1x, ${imgBarnAndNob2x} 2x" src="${imgBarnAndNob1x}"
                 alt="Barnes and Noble shop" width="38" height="36" /></a>
     </div>
