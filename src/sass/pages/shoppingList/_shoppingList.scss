@@ -10,13 +10,21 @@
   padding-top: 104px;
   padding-bottom: 40px;
 }
-// body {
-//   background: #d0d0d0;
-// }
 
 .textInverse {
   color: var(--blue-cl);
 }
+
+.text-title {
+  letter-spacing: -0.04em;
+  color: var(--secondary-text-cl);
+  transition: color var(--cubic-time);
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.19;
+}
+
 .shoppingListHeading {
   margin-bottom: 40px;
   font-family: 'DM Sans';
@@ -270,14 +278,14 @@
 
 .emptyText {
   font-family: 'DM Sans';
-  font-style: normal;
+  // font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
-  text-align: center;
+  line-height: 1.28;
+  // text-align: center;
   letter-spacing: -0.02em;
 
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--fourth-text-cl);
   text-align: center;
   width: 244px;
   margin-bottom: 14px;
