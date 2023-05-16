@@ -5,6 +5,8 @@ import './js/mobileMenu';
 import './js/shoppingList';
 import './js/makeHeaderTabsActive';
 
+import './js/makeHeaderTabsActive.js';
+
 // import './js/bestSellerBooks';
 // import './js/popup';
 // import './js/scroll-up';
