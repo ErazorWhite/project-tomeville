@@ -1,12 +1,21 @@
 import { BookAPI } from './bookAPI';
-import { displayBooksByCategory } from './renderBooksByCategory';
-import { spinerStart, spinerStop } from './spinner';
+import {
+  displayBooksByCategory,
+  booksByCategoryInitMarkup,
+} from './renderBooksByCategory';
+import { renderBestSellerBooks } from './bestSellerBooks';
+import { bestSellersInitMarkup } from './renderMarkup';
+import { refreshPopupDOM } from './popup';
 
 let currentCategory = null; // Змінна для зберігання посилання на поточний елемент категорії
+let allCategoriesEl = null;
+const booksByCategoriesSectionEl = document.querySelector(
+  '.js-books-container'
+);
+const bestSellerBooksSectionEl = document.querySelector('.bs-books__section');
 
 // Функція для отримання та відображення категорій книг
 async function displayBookCategories() {
-  spinerStart();
   const bookAPI = new BookAPI();
   const categoriesList = document.querySelector('.categories-list');
 
@@ -27,7 +36,10 @@ async function displayBookCategories() {
       .join('');
 
     // Додавання розмітки до <ul> з початковим елементом
-    categoriesList.innerHTML = `<li class="categories-item">All categories</li>${markup}`;
+    categoriesList.innerHTML = `<li class="categories-item" data-category="All categories">All categories</li>${markup}`;
+    allCategoriesEl = document.querySelector(
+      'li.categories-item[data-category="All categories"]'
+    );
 
     // Додаємо обробник подій кліку до кожного елемента категорії
     const categoryItems = document.querySelectorAll('.categories-item');
@@ -37,7 +49,6 @@ async function displayBookCategories() {
   } catch (error) {
     console.error(error);
   }
-  spinerStop();
 }
 
 // Виклик функції для відображення категорій книг
@@ -54,13 +65,34 @@ function handleCategoryClick(event) {
 
     // Додаємо клас "current_category" до нового поточного елемента
     event.target.classList.add('current_category');
-    
+
     // Зберігаємо посилання на новий поточний елемент
     currentCategory = event.target;
 
     const category = event.target.dataset.category;
 
     // Викликаємо функцію для відображення книг за обраною категорією
-    displayBooksByCategory(category);
+
+    document.querySelector('.js-bs-books__section').innerHTML = '';
+    if (event.target == allCategoriesEl) {
+      hideSection(booksByCategoriesSectionEl);
+      bestSellerBooksSectionEl.style.display = '';
+      bestSellerBooksSectionEl.innerHTML = bestSellersInitMarkup;
+      
+      renderBestSellerBooks();
+      refreshPopupDOM();
+    } else {
+      hideSection(bestSellerBooksSectionEl);
+      booksByCategoriesSectionEl.style.display = '';
+      booksByCategoriesSectionEl.innerHTML = booksByCategoryInitMarkup;
+      
+      displayBooksByCategory(category);
+      refreshPopupDOM();
+    }
   }
+}
+
+function hideSection(sectionEl) {
+  sectionEl.innerHTML = '';
+  sectionEl.style.display = 'none';
 }

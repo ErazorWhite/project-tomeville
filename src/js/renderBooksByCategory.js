@@ -1,12 +1,12 @@
 import { BookAPI } from './bookAPI';
+import { spinerStart, spinerStop } from './spinner';
 
 export async function displayBooksByCategory(category) {
+  spinerStart();
   const bookAPI = new BookAPI();
   const booksContainer = document.querySelector('.js-books-container');
   const categoryTitle = booksContainer.querySelector('.js-category-title');
   const bookList = booksContainer.querySelector('.js-book-list');
-  const titleLastWord = document.querySelector('.bs-books__accent');
-
 
   try {
     const books = await bookAPI.getBooksByCategory(category);
@@ -15,12 +15,15 @@ export async function displayBooksByCategory(category) {
     const limitedBooks = books.slice(0, 20);
 
     // Створюємо розмітку для кожної книги
-    const markup = limitedBooks.map(book => {
-      return `
-      <li class="book-card bs-books__item" data-book-id='${book._id}'>
+    const markup = limitedBooks
+      .map(book => {
+        return `
+      <li class="book-card bs-books__item" data-id='${book._id}'>
       <a class="bs-books__link" href="#">
       <div class="bs-books__thumb">
-        <img class="bs-books__picture" src="${book.book_image}" alt="${book.author} ${book.title}" loading="lazy">
+        <img class="bs-books__picture" src="${book.book_image}" alt="${
+          book.author
+        } ${book.title}" loading="lazy">
       <p class="bs-books__view">quick view</p>
         </div>
       <div class="bs-books__box">
@@ -29,14 +32,15 @@ export async function displayBooksByCategory(category) {
         </div>
         </a>
     </li>`;
-    }).join('');
+      })
+      .join('');
 
     // Оновлення заголовка з обраною категорією
 
     categoryTitle.textContent = category;
 
     const array = categoryTitle.textContent.split(' ');
-    const lastElement = array[array.length-1];
+    const lastElement = array[array.length - 1];
 
     array.pop();
 
@@ -47,20 +51,23 @@ export async function displayBooksByCategory(category) {
     // titleLastWord.textContent = lastElement;
 
     const span = document.createElement('span');
-    span.textContent = ` ${lastElement}` ;
+    span.textContent = ` ${lastElement}`;
     // console.log(span.textContent);
 
     const accentLastWord = categoryTitle.appendChild(span);
-    accentLastWord.classList.add("bs-books__accent");
+    accentLastWord.classList.add('bs-books__accent');
     // console.log(titleLastWord.textContent);
-
 
     // Додаємо розмітку до контейнера з книгами
     bookList.innerHTML = markup;
   } catch (error) {
     console.error(error);
   }
+  spinerStop();
 }
 
-// // Приклад виклику функції для виведення книг з категорії 
+export const booksByCategoryInitMarkup = `<h1 class="js-category-title bs-books__headline"></h1>
+  <ul class="js-book-list books__list" data-action="booksContainer"></ul>`;
+
+// // Приклад виклику функції для виведення книг з категорії
 // displayBooksByCategory('Paperback Nonfiction');
