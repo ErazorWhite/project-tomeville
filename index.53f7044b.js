@@ -1,2 +1,0 @@
-!function(){var e=function(){var e=document.querySelector(".progress"),n=document.documentElement.scrollTop,t=document.documentElement.scrollHeight-document.documentElement.clientHeight,o=Math.round(100*n/t);e.style.display=n>100?"grid":"none",e.addEventListener("click",(function(){document.documentElement.scrollTop=0})),e.style.background="conic-gradient(var(--blue-cl) ".concat(o,"%, #d7d7d7 ").concat(o,"%)")};window.addEventListener("scroll",e),window.addEventListener("load",e)}();
-//# sourceMappingURL=index.53f7044b.js.map
