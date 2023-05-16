@@ -36,20 +36,20 @@ color: var(--main-text-cl);
 }
 
 .book-card {
-  margin-top: 0px;
-  width: 100%;
-  list-style: none;
+  // margin-top: 0px;
+  // width: 100%;
+  // list-style: none;
 
-  @media screen and (min-width: $bp-tablet) {
-    margin: 0;
-    width: 218px;
-    height: 366px;
-  }
+  // @media screen and (min-width: $bp-tablet) {
+  //   margin: 0;
+  //   width: 218px;
+  //   height: 366px;
+  // }
 
-  @media screen and (min-width: $bp-desktop) {
-    width: 180px;
-    height: 306px;
-  }
+  // @media screen and (min-width: $bp-desktop) {
+  //   width: 180px;
+  //   height: 306px;
+  // }
 
   &__link {
     color: inherit;
