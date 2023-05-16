@@ -19,8 +19,10 @@ const swiper = new Swiper('.swiper', {
   spaceBetween: 20,
   slidesPerView: 'auto',
   rewind: true,
-  loop: true,
-
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
   navigation: {
     nextEl: '.swiper-button-next',
     loop: true,
