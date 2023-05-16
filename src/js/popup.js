@@ -1,6 +1,6 @@
 import { BookAPI } from './bookAPI';
 import storage from './localStorage';
-import { createBookMarkup } from './createMarkupModalShopList';
+import { createBookMarkup } from './createMarkupModal';
 
 let BOOK_ID;
 const KEY_LS = 'booksInShopingList';
