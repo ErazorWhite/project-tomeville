@@ -1,10 +1,12 @@
 import { BookAPI } from './BookAPI';
 import { displayBooksByCategory } from './renderBooksByCategory';
+import { spinerStart, spinerStop } from './spinner';
 
 let currentCategory = null; // Змінна для зберігання посилання на поточний елемент категорії
 
 // Функція для отримання та відображення категорій книг
 async function displayBookCategories() {
+  spinerStart();
   const bookAPI = new BookAPI();
   const categoriesList = document.querySelector('.categories-list');
 
@@ -35,6 +37,7 @@ async function displayBookCategories() {
   } catch (error) {
     console.error(error);
   }
+  spinerStop();
 }
 
 // Виклик функції для відображення категорій книг
