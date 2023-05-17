@@ -5,7 +5,8 @@ import './js/mobileMenu';
 import './js/shoppingList';
 import './js/makeHeaderTabsActive';
 
-import './js/makeHeaderTabsActive.js';
+import './js/support/supportSlider';
+import './js/support/charityFoundsRender';
 
 // import './js/bestSellerBooks';
 // import './js/popup';
@@ -21,5 +22,5 @@ import './js/bookAPI';
 // import './js/localStorage';
 
 // import './js/shoppingList';
-// import './js/shoppingTemporary';
+
 // import './js/makeHeaderTabsActive';

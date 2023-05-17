@@ -1,20 +1,25 @@
+.shoppingList_container {
+  @extend .container;
+  @include for-desktop-up {
+    display: flex;
+  }
+}
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.container {
-  max-width: 1200px;
-  padding: 0 20px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 104px;
-  padding-bottom: 40px;
-}
+// .container {
+//   max-width: 1200px;
+//   padding: 0 20px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-top: 104px;
+//   padding-bottom: 40px;
+// }
 
 .textInverse {
   color: var(--blue-cl);
 }
-
 .text-title {
   letter-spacing: -0.04em;
   color: var(--secondary-text-cl);
@@ -24,7 +29,6 @@
   font-weight: 700;
   line-height: 1.19;
 }
-
 .shoppingListHeading {
   margin-bottom: 40px;
   font-family: 'DM Sans';
@@ -34,6 +38,12 @@
   line-height: 52px;
 
   letter-spacing: -0.04em;
+  @media screen and (min-width: 768px) {
+    margin-left: 15px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-left: 80px;
+  }
 }
 .basketList {
   display: flex;
@@ -48,8 +58,8 @@
   display: flex;
   width: 355px;
   height: 170px;
-  background: #ffffff;
-  border: 2px solid rgba(79, 46, 232, 0.4);
+  background: var(--secondary-bg-cl);
+  border: 2px solid var(--border-sl-cl);
   border-radius: 16px;
   @media screen and (min-width: 768px) {
     width: 704px;
@@ -85,7 +95,7 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--secondary-text-cl);
 }
 .dump {
   margin-bottom: 8px;
@@ -96,7 +106,7 @@
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.03em;
-  color: #b4afaf;
+  color: var(--main-text-cl);
 }
 .description {
   min-width: 193px;
@@ -110,7 +120,7 @@
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.04em;
-  color: #111111;
+  color: var(--secondary-text-cl);
   @media screen and (min-width: 768px) {
     height: 53px;
     margin-bottom: 32px;
@@ -125,7 +135,7 @@
   font-size: 12px;
   line-height: 14px;
   letter-spacing: -0.04em;
-  color: #b4afaf;
+  color: var(--main-text-cl);
 }
 .basketBuyLink {
   position: absolute;
@@ -143,6 +153,7 @@
 }
 
 .trashButton {
+  pointer-events: auto;
   position: absolute;
   top: 14px;
   right: 14px;
@@ -180,20 +191,13 @@
   mix-blend-mode: luminosity;
 }
 
-// @media (min-device-pixel-ratio: 2),
-//   (min-resolution: 192dpi),
-//   (min-resolution: 2dppx) {
-//   .box {
-//     background-image: url('photo@2x.png');
-//   }
-// }
-
 .thumbAmazon {
   width: 32px;
   height: 11px;
   background-image: url('../images/buyLinks/svgAmazonMobile.svg');
   background-size: cover;
   mix-blend-mode: luminosity;
+  filter: var(--light-amazon);
 }
 .thumbAppleBook {
   width: 16px;
@@ -209,7 +213,7 @@
   background-size: cover;
   mix-blend-mode: luminosity;
 }
-.thumbAmazon:hover,
+// .thumbAmazon:hover,
 .thumbBookshop:hover,
 .thumbAppleBook:hover {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
@@ -221,6 +225,7 @@
     background-image: url('../images/buyLinks/svgAmazonDesktopTab.svg');
     background-size: cover;
     mix-blend-mode: luminosity;
+    filter: var(--light-amazon);
   }
   .thumbAppleBook {
     width: 30px;
@@ -278,11 +283,11 @@
 
 .emptyText {
   font-family: 'DM Sans';
-  // font-style: normal;
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.28;
-  // text-align: center;
+  line-height: 18px;
+  text-align: center;
   letter-spacing: -0.02em;
 
   color: var(--fourth-text-cl);
