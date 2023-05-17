@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', 'Times New Roman', Times, serif;
+  font-family: "DM Sans", "Times New Roman", Times, serif;
   background-color: var(--main-bg-cl);
   overflow-y: scroll;
   transition: background-color var(--cubic-time);
@@ -53,4 +53,13 @@ img {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+%cut-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  white-space: normal;
 }

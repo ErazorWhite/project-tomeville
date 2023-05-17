@@ -68,6 +68,3 @@ export async function displayBooksByCategory(category) {
 
 export const booksByCategoryInitMarkup = `<h1 class="js-category-title bs-books__headline"></h1>
   <ul class="js-book-list books__list" data-action="booksContainer"></ul>`;
-
-// // Приклад виклику функції для виведення книг з категорії
-// displayBooksByCategory('Paperback Nonfiction');

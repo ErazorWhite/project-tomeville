@@ -34,9 +34,6 @@
     color: var(--blue-cl);
   }
 
-  // &__categories-list {
-  // }
-
   &__category-title {
     display: none;
 
@@ -66,6 +63,14 @@
     }
   }
 
+  &__categories-item {
+    @include for-tablet-up {
+      &:not(:last-child) {
+        padding-bottom: 40px;
+      }
+    }
+  }
+
   &__list li:nth-child(n + 4) {
     @include for-tablet-up {
       display: none;
@@ -76,6 +81,12 @@
   }
 
   &__item {
+    @include for-phone-only {
+      &:not(:last-child) {
+        padding-bottom: 40px;
+      }
+    }
+
     flex-basis: 100%;
 
     @include for-tablet-up {
@@ -136,7 +147,13 @@
 
   &__box {
     padding-top: 14px;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
+    @include for-tablet-up {
+      padding-bottom: 20px;
+    }
+    @include for-desktop-up {
+      padding-bottom: 32px;
+    }
   }
 
   &__title {
@@ -214,6 +231,8 @@
   }
 
   &__view {
+    width: 100%;
+
     position: absolute;
     bottom: 0;
     left: 0;
