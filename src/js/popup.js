@@ -1,6 +1,6 @@
 import { BookAPI } from './bookAPI';
 import storage from './localStorage';
-import { createBookMarkup } from './createMarkupModalShopList';
+import { createBookMarkup } from './createMarkupModal';
 
 let BOOK_ID;
 const KEY_LS = 'booksInShopingList';
@@ -10,23 +10,41 @@ let BOOKS_IDS = {
 const api = new BookAPI();
 const { save, load } = storage;
 
-const booksContainerEl = document.querySelector(
-  '[data-action="booksContainer"]'
-);
-const backdropEl = document.querySelector('.js-backdrop');
-const markDataContainerEl = document.querySelector(
+let booksContainerEl = document.querySelector('[data-action="booksContainer"]');
+
+let backdropEl = document.querySelector('.js-backdrop');
+let markDataContainerEl = document.querySelector(
   '[data-action="popup-data-markup"]'
 );
-const closePopupBtnEl = document.querySelector('.close-popup');
-const addBookBtnEl = document.querySelector('.add-book-button');
-const removeBookBtnEl = document.querySelector('.remove-book-button');
-const removeBookTextEl = document.querySelector('.remove-book-text');
+let closePopupBtnEl = document.querySelector('.close-popup');
+let addBookBtnEl = document.querySelector('.add-book-button');
+let removeBookBtnEl = document.querySelector('.remove-book-button');
+let removeBookTextEl = document.querySelector('.remove-book-text');
 
-booksContainerEl.addEventListener('click', onBooksContainerClick);
-backdropEl.addEventListener('click', onBackdropClick);
-closePopupBtnEl.addEventListener('click', onCloseBtnClick);
-addBookBtnEl.addEventListener('click', onAddBookBtnClick);
-removeBookBtnEl.addEventListener('click', onRemoveBookBtnClick);
+export function refreshPopupDOM() {
+  booksContainerEl = document.querySelector('[data-action="booksContainer"]');
+
+  backdropEl = document.querySelector('.js-backdrop');
+  markDataContainerEl = document.querySelector(
+    '[data-action="popup-data-markup"]'
+  );
+  closePopupBtnEl = document.querySelector('.close-popup');
+  addBookBtnEl = document.querySelector('.add-book-button');
+  removeBookBtnEl = document.querySelector('.remove-book-button');
+  removeBookTextEl = document.querySelector('.remove-book-text');
+
+  addEventListeners();
+}
+
+addEventListeners();
+
+function addEventListeners() {
+  booksContainerEl.addEventListener('click', onBooksContainerClick);
+  backdropEl.addEventListener('click', onBackdropClick);
+  closePopupBtnEl.addEventListener('click', onCloseBtnClick);
+  addBookBtnEl.addEventListener('click', onAddBookBtnClick);
+  removeBookBtnEl.addEventListener('click', onRemoveBookBtnClick);
+}
 
 async function onBooksContainerClick(e) {
   e.preventDefault();

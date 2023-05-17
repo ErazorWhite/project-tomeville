@@ -1,27 +1,4 @@
-export default function renderBookCardsMarkup(books) {
-  const markup = books
-    .map(
-      ({ _id, book_image, title, author }) => `
-  <li class="book-card" data-book-id='${_id}'>
-  <a class="book-card__link" href="#">
-  <div class="book-card__thumb">
-    <img class="book-card__image" src="${book_image}" alt="${author} ${title}" loading="lazy">
-  <p class="book-card__notification">quick view</p>
-    </div>
-  <div>
-    <div>
-      <p class="book-card__title">"${title}"</p>
-    </div>
-    <div>
-      <p>"${author}"</p>
-    </div>
-  </div>
-  </a>
-</li>`
-    )
-    .join('');
-  return markup;
-}
+import noImg from '../images/noImage/noImage-desk@1x.png';
 
 export function renderBsBookCardsMarkup(bestBooksList) {
   const markup = bestBooksList
@@ -37,9 +14,7 @@ export function renderBsBookCardsMarkup(bestBooksList) {
               <p class="bs-books__category">${list_name}</p>
               <a class="bs-books__link" href="#">
                   <div class="bs-books__thumb">
-                      <img src="${
-                        book_image || 'src/images/noimage/noImage-desk@2x.png'
-                      }" alt="book cover: ${
+                      <img src="${book_image || noImg}" alt="book cover: ${
                 title || 'No title'
               }"class="bs-books__picture" width="335" height="485">
                       <p class="bs-books__view">quick view</p>
@@ -61,3 +36,7 @@ export function renderBsBookCardsMarkup(bestBooksList) {
     .join('');
   return markup;
 }
+
+export const bestSellersInitMarkup = `<h1 class="bs-books__headline">Best Sellers <span class="bs-books__accent">Books</span></h1>
+        <ul class="bs-books__categories-list" data-action="booksContainer">
+        </ul>`;

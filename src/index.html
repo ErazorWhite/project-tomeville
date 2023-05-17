@@ -15,20 +15,20 @@
 <body>
   <include src="./partials/header.html"></include>
 
-  <main>
-    <include src="./partials/home/bs_books.html"></include>
-    <include src="./partials/benefitFounds.html"></include>
+  <main class="main__container">
+    <div class="content__container">
+      <include src="./partials/list_categories.html"></include>
+      <include src="./partials/supportBunner.html"></include>
+    </div>
+    <div>
+      <include src="./partials/home/bs_books.html"></include>
+      <include src="./partials/books_by_categories.html"></include>
+    </div>
   </main>
 
   <include src="./partials/mobileMenu.html"></include>
   <include src="./partials/popup.html"></include>
   <include src="./partials/scroll-up.html"></include>
-
-  <script type="module" src="./js/popup.js"></script>
-  <script type="module" src="./js/scroll-up.js"></script>
-  <script type="module" src="./js/styleSwitcher.js"></script>
-  <script type="module" src="./js/mobileMenu.js"></script>
-  <script type="module" src="./js/loader.js"></script>
 </body>
 
 

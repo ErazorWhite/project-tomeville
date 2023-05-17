@@ -7,20 +7,19 @@ body.show-popup .popup {
   top: 50%;
   left: 50%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 40px 24px;
 
-  min-width: 90%;
-  min-height: 90%;
-
-  background: #ffffff;
-  border: 2px solid #111111;
+  background: var(--white-cl);
+  border: 2px solid var(--black-cl);
   border-radius: 18px;
   transform: translate(-50%, -50%) scale(0.5);
-  // Час і кубік потім замінити на змінні, бо їх там змінювали.
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--cubic-time);
+
+  @media screen and (min-width: $bp-tablet) {
+    padding: 40px 40px;
+
+    width: 579px;
+  }
 }
 
 .close-popup {
@@ -34,13 +33,91 @@ body.show-popup .popup {
   padding: 0;
 
   border: none;
-  background-color: #ffffff;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--white-cl);
+  transition: fill var(--cubic-time);
 
   &:hover,
   &:focus {
-    fill: #4f2ee8;
+    fill: var(--blue-cl);
   }
+}
+
+.popup-box {
+  width: 287px;
+
+  @media screen and (min-width: $bp-tablet) {
+    display: flex;
+    width: 100%;
+    margin: 0 0 40px 0;
+  }
+}
+
+.popup-box-img {
+  margin: 0 auto 14px auto;
+
+  min-width: 287px;
+  height: 408px;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin: 0 24px 0 0;
+    min-width: 192px;
+    height: 281px;
+  }
+}
+
+.popup-img {
+  height: 100%;
+  width: 100%;
+}
+
+.popup-text {
+  @media screen and (min-width: $bp-tablet) {
+    width: 100%;
+  }
+}
+
+.popup-title {
+  margin: 0 0 4px 0;
+
+  @extend %primary-title-text;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin: 0 0 8px 0;
+  }
+}
+
+.popup-author {
+  margin: 0 0 18px 0;
+
+  @extend %primary-author-name;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin: 0 0 20px 0;
+  }
+}
+
+.popup-description {
+  margin: 0 0 14px 0;
+
+  @extend %primary-description;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin: 0 0 20px 0;
+  }
+}
+
+.popup-img-links {
+  display: flex;
+  align-items: center;
+  margin: 0 0 40px 0;
+
+  @media screen and (min-width: $bp-tablet) {
+    margin: 0;
+  }
+}
+
+.popup-link:not(:last-child) {
+  margin: 0 20px 0 0;
 }
 
 .add-remove-btn-container {
@@ -48,55 +125,39 @@ body.show-popup .popup {
 }
 
 .add-book-button {
-  padding: 14px 28px;
+  @extend %button-text;
 
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
-
-  color: #111111;
-  background-color: #ffffff;
-  border: 2px solid #4f2ee8;
+  background-color: var(--white-cl);
+  border: 2px solid var(--blue-cl);
   border-radius: 40px;
-  transition: color 1000ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--cubic-time), background-color var(--cubic-time);
 
   &:hover,
   &:focus {
-    color: #ffffff;
-    background-color: #4f2ee8;
+    color: var(--white-cl);
+    background-color: var(--blue-cl);
   }
 }
 
 .remove-book-button {
-  padding: 14px 28px;
+  margin: 0 0 8px 0;
 
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.01em;
-  text-transform: uppercase;
+  @extend %button-text;
 
-  color: #111111;
-  background-color: #ffffff;
-  border: 2px solid #4f2ee8;
+  background-color: var(--white-cl);
+  border: 2px solid var(--blue-cl);
   border-radius: 40px;
-  transition: color 1000ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--cubic-time), background-color var(--cubic-time);
 
   &:hover,
   &:focus {
-    color: #ffffff;
-    background-color: #4f2ee8;
+    color: var(--white-cl);
+    background-color: var(--blue-cl);
   }
 }
 
 .remove-book-text {
-  color: tomato;
+  text-align: center;
+
+  @extend %tertiary-text;
 }
