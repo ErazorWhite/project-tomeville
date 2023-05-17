@@ -28,6 +28,7 @@
   --fourth-text-cl: rgba(0, 0, 0, 0.6);
   --switcher-gradient: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
   --light-amazon: brightness(100%);
+  --categories-accent: #4f2ee8;
 }
 
 .dark-style {
@@ -38,4 +39,5 @@
   --fourth-text-cl: rgba(255, 255, 255, 0.6);
   --switcher-gradient: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
   --light-amazon: brightness(1800%);
+  --categories-accent: #eac645;
 }

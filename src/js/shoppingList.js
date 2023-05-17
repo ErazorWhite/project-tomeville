@@ -105,19 +105,19 @@ function createShoppingCardMarkup({
                     <ul class="basketBuyLink">
                       <li>
                         <a
-                          href="${buy_links[0].url}">
+                          href="${buy_links[0].url}" target="_blank">
                         <div class="thumbAmazon"></div>
                         </a>
                       </li>
                       <li>
                         <a                          
-                          href="${buy_links[1].url}"
+                          href="${buy_links[1].url}" target="_blank"
                           ><div class="thumbAppleBook"></div>
                         </a>
                       </li>
                       <li>
                         <a                         
-                          href="${buy_links[4].url}"
+                          href="${buy_links[4].url}" target="_blank"
                           >
                           <div class="thumbBookshop"></div>
                         </a>
