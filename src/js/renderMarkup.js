@@ -14,9 +14,14 @@ export function renderBsBookCardsMarkup(bestBooksList) {
               <p class="bs-books__category">${list_name}</p>
               <a class="bs-books__link" href="#">
                   <div class="bs-books__thumb">
-                      <img src="${book_image || noImg}" alt="book cover: ${
-                title || 'No title'
-              }"class="bs-books__picture" width="335" height="485" loading="lazy">
+                  <img
+  srcset="${book_image || noImg} 300w, ${book_image || noImg} 600w, ${
+                book_image || noImg
+              } 1200w"
+  src="${book_image || noImg}"
+  alt="book cover: ${
+    title || 'No title'
+  }"class="bs-books__picture" width="335" height="485" loading="lazy">
                       <p class="bs-books__view">quick view</p>
                   </div>
                   <div class="bs-books__box">
