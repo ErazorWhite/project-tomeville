@@ -1,24 +1,51 @@
 body.show-popup .popup {
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
+}
+body.show-popup .modal-container {
+  opacity: 1;
+}
+
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--cubic-time);
 }
 
 .popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
+  max-height: 762px;
 
   padding: 40px 24px;
 
   background: var(--white-cl);
   border: 2px solid var(--black-cl);
   border-radius: 18px;
-  transform: translate(-50%, -50%) scale(0.5);
+  transform: scale(0.5);
   transition: transform var(--cubic-time);
 
-  @media screen and (min-width: $bp-tablet) {
-    padding: 40px 40px;
+  pointer-events: all;
+  overflow-y: auto;
+  overflow-x: hidden;
 
+  @media screen and (max-height: 530px) {
+    height: 100%;
+  }
+
+  @include for-phone-only {
+    width: 100%;
+    max-width: 335px;
+    height: 100%;
+  }
+
+  @include for-tablet-up {
+    padding: 40px 40px;
     width: 579px;
+    // height: 465px;
   }
 }
 
@@ -79,29 +106,56 @@ body.show-popup .popup {
 .popup-title {
   margin: 0 0 4px 0;
 
-  // @extend var(--black-cl);
+  max-height: 70px;
+  @extend %cut-text;
 
-  @media screen and (min-width: $bp-tablet) {
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+
+  @include for-phone-only {
+    font-size: 16px;
+  }
+  @include for-tablet-up {
     margin: 0 0 8px 0;
+    font-size: 24px;
   }
 }
 
 .popup-author {
   margin: 0 0 18px 0;
 
-  // @extend %primary-author-name;
+  letter-spacing: -0.04em;
+  font-style: italic;
 
-  @media screen and (min-width: $bp-tablet) {
+  color: var(--main-text-cl);
+
+  @extend %cut-text;
+
+  @include for-phone-only {
+    max-width: 287px;
+    font-size: 12px;
+    line-height: 1.17;
+  }
+  @include for-tablet-up {
     margin: 0 0 20px 0;
   }
 }
 
 .popup-description {
+  padding: 1px 0;
   margin: 0 0 14px 0;
+  font-style: normal;
+  color: var(--secondary-text-cl);
 
-  // @extend %primary-description;
+  overflow-y: auto;
 
-  @media screen and (min-width: $bp-tablet) {
+  @include for-phone-only {
+    max-height: 70px;
+  }
+  @include for-tablet-up {
+    max-height: 180px;
+  }
+  @include for-tablet-up {
     margin: 0 0 20px 0;
   }
 }
@@ -124,8 +178,16 @@ body.show-popup .popup {
   text-align: center;
 }
 
-.add-book-button {
-  // @extend %button-text;
+%modal-button {
+  padding: 14px 23px;
+  margin: 0 0 8px 0;
+
+  font-size: 14px;
+
+  @include for-tablet-up {
+    font-size: 18px;
+    width: 100%;
+  }
 
   background-color: var(--white-cl);
   border: 2px solid var(--blue-cl);
@@ -139,25 +201,33 @@ body.show-popup .popup {
   }
 }
 
+.add-book-button {
+  @extend %modal-button;
+}
+
 .remove-book-button {
-  margin: 0 0 8px 0;
+  @extend %modal-button;
+}
 
-  // @extend %button-text;
-
-  background-color: var(--white-cl);
-  border: 2px solid var(--blue-cl);
-  border-radius: 40px;
-  transition: color var(--cubic-time), background-color var(--cubic-time);
-
-  &:hover,
-  &:focus {
-    color: var(--white-cl);
-    background-color: var(--blue-cl);
+.remove-book-text-container {
+  display: flex;
+  justify-content: center;
+  @include for-tablet-up {
+    padding: 0 88px;
   }
 }
 
 .remove-book-text {
+  width: 100%;
   text-align: center;
 
-  // @extend %tertiary-text;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+
+  color: var(--main-text-cl);
+
+  @include for-phone-only {
+    // max-width: 287px;
+  }
 }

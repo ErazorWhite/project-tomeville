@@ -2,6 +2,8 @@ body.show-popup .backdrop {
   opacity: 1;
   visibility: visible;
   pointer-events: initial;
+  justify-content: center;
+  overflow-y: scroll;
 }
 
 .backdrop {
@@ -18,4 +20,5 @@ body.show-popup .backdrop {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  transition: opacity var(--cubic-time), visibility var(--cubic-time);
 }
