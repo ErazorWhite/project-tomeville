@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Получаем текущий путь страницы
   const path = window.location.pathname;
-  console.log("🚀 ~ file: makeHeaderTabsActive.js:4 ~ path:", path)
 
   // Находим кнопки вкладок
   const navTabsEl = document.querySelectorAll('.header__btn');
