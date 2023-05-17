@@ -16,7 +16,7 @@ export function renderBsBookCardsMarkup(bestBooksList) {
                   <div class="bs-books__thumb">
                       <img src="${book_image || noImg}" alt="book cover: ${
                 title || 'No title'
-              }"class="bs-books__picture" width="335" height="485">
+              }"class="bs-books__picture" width="335" height="485" loading="lazy">
                       <p class="bs-books__view">quick view</p>
                   </div>
                   <div class="bs-books__box">

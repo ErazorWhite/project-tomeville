@@ -27,18 +27,18 @@ export function createBookMarkup(
           urlAmaz || 'https://www.kualo.co.uk/404'
         }" class="popup-link" target="_blank" rel="noreferrer noopener">
             <img srcset="${imgAmaz1x} 1x, ${imgAmaz2x} 2x" src="${imgAmaz1x}" alt="Amazon shop" width="62"
-                height="19" />
+                height="19" loading="lazy"/>
         </a>
         <a href="${
           urlApBooks || 'https://www.kualo.co.uk/404'
         }" class="popup-link" target="_blank" rel="noreferrer noopener"><img
                 srcset="${imgApBooks1x} 1x, ${imgApBooks2x} 2x" src="${imgApBooks1x}" alt="Apple Books shop" width="33"
-                height="32" /></a>
+                height="32" loading="lazy"/></a>
         <a href="${
           urlBarnAndNob || 'https://www.kualo.co.uk/404'
         }" class="popup-link" target="_blank" rel="noreferrer noopener"><img
                 srcset="${imgBarnAndNob1x} 1x, ${imgBarnAndNob2x} 2x" src="${imgBarnAndNob1x}"
-                alt="Barnes and Noble shop" width="38" height="36" /></a>
+                alt="Barnes and Noble shop" width="38" height="36" loading="lazy"/></a>
     </div>
 </div>`;
 }
