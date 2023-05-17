@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Получаем текущий путь страницы
   const path = window.location.pathname;
+  console.log("🚀 ~ file: makeHeaderTabsActive.js:4 ~ path:", path)
 
   // Находим кнопки вкладок
   const navTabsEl = document.querySelectorAll('.header__btn');
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       navTab.classList.add('active');
     } else if (
       navTab.textContent.trim() === 'Shopping list' &&
-      (path === '/shopping_list.html' || path === 'project-tomeville/shopping_list.html')
+      (path === '/shopping_list.html' || path === '/project-tomeville/shopping_list.html')
     ) {
       // Добавляем класс "active" для подсветки активной вкладки
       navTab.classList.add('active');
