@@ -107,6 +107,14 @@
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: var(--secondary-text-cl);
+
+  @include for-phone-only {
+    padding-right: 20px;
+    max-width: 190px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
 .dump {
   margin-bottom: 8px;
@@ -147,6 +155,14 @@
   line-height: 14px;
   letter-spacing: -0.04em;
   color: var(--main-text-cl);
+
+  @include for-phone-only {
+    padding-right: 60px;
+    max-width: 190px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
 .basketBuyLink {
   position: absolute;
