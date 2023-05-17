@@ -11,11 +11,9 @@ const LOCALSTORAGE_KEY = 'booksInShopingList';
 
 spinerStart();
 
-let booksId = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || {};
-console.log(booksId.id);
+let booksId = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || {id:[]};
 
 function onClick(evt) {
-  console.log(evt.target);
   if (
     evt.target.nodeName !== 'BUTTON' &&
     evt.target.nodeName !== 'svg' &&
@@ -27,10 +25,8 @@ function onClick(evt) {
   const dataId = li.dataset.id;
 
   const idToRemove = booksId.id.indexOf(dataId);
-  console.log(idToRemove);
   if (idToRemove !== -1) {
     booksId.id.splice(idToRemove, 1);
-    console.log(booksId.id);
 
     const updatedbBoksIdToString = JSON.stringify({
       id: booksId.id,
@@ -38,7 +34,6 @@ function onClick(evt) {
 
     localStorage.setItem(LOCALSTORAGE_KEY, updatedbBoksIdToString);
 
-    console.log(booksId.id.length);
     if (!booksId.id.length) {
       emptyShoppingList.innerHTML = `<div class="emptyShoppingList">
         <p class="emptyText">
@@ -55,22 +50,22 @@ function onClick(evt) {
 
 function rendering() {
   const api = new BookAPI();
-  booksId.id.map(async id => {
-    try {
-      api.id = id;
-      const response = await api.getBooksById();
-      data = response;
-      emptyShoppingList.innerHTML = '';
-      emptyShoppingList.style.display = 'none';
+    booksId.id.map(async id => {
+      try {
+        api.id = id;
+        const response = await api.getBooksById();
+        data = response;
+        emptyShoppingList.innerHTML = '';
+        emptyShoppingList.style.display = 'none';
 
-      shoppingList.insertAdjacentHTML(
-        'beforeend',
-        createShoppingCardMarkup(response)
-      );
-    } catch (error) {
-      console.log(error.message);
-    }
-  });
+        shoppingList.insertAdjacentHTML(
+          'beforeend',
+          createShoppingCardMarkup(response)
+        );
+      } catch (error) {
+        console.log(error.message);
+      }
+    });
 }
 rendering();
 spinerStop();
