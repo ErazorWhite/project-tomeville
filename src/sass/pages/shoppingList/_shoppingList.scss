@@ -1,0 +1,309 @@
+.shoppingList {
+  width: 100%;
+  &__container {
+    @extend .container;
+    @include for-desktop-up {
+      display: flex;
+      gap: 40px;
+    }
+
+    @include for-desktop-up {
+      padding-top: 112px;
+    }
+  }
+
+  &__support {
+    display: none;
+    @include for-desktop-up {
+      display: block;
+    }
+  }
+
+  &__section {
+    @include for-phone-only {
+      padding-top: 104px;
+    }
+    @include for-tablet-up {
+      padding-top: 112px;
+    }
+    @include for-desktop-up {
+      width: 100%;
+      padding-top: 0;
+    }
+  }
+}
+
+.textInverse {
+  color: var(--blue-cl);
+}
+.text-title {
+  letter-spacing: -0.04em;
+  color: var(--secondary-text-cl);
+  transition: color var(--cubic-time);
+  margin-bottom: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.19;
+  margin-bottom: 40px;
+}
+.shoppingListHeading {
+  margin-bottom: 40px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+
+  letter-spacing: -0.04em;
+}
+.basketList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-content: center;
+}
+.basketCard {
+  position: relative;
+  padding: 14px;
+  display: flex;
+  width: 355px;
+  height: 170px;
+  background: var(--secondary-bg-cl);
+  border: 2px solid var(--border-sl-cl);
+  border-radius: 16px;
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    height: 213px;
+    padding: 24px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 996px;
+    height: 213px;
+    padding: 24px;
+  }
+}
+.imgThumb {
+  overflow: hidden;
+  margin-right: 14px;
+  min-width: 100px;
+  border-radius: 8px;
+  @media screen and (min-width: 768px) {
+    min-width: 116px;
+    height: 165px;
+    margin-right: 24px;
+  }
+}
+.title {
+  height: 18px;
+  overflow: hidden;
+  margin-bottom: 4px;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--secondary-text-cl);
+}
+.dump {
+  margin-bottom: 8px;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.03em;
+  color: var(--main-text-cl);
+}
+.description {
+  min-width: 193px;
+  height: 68px;
+  margin-bottom: 14px;
+  overflow-y: auto;
+
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  color: var(--secondary-text-cl);
+  @media screen and (min-width: 768px) {
+    height: 53px;
+    margin-bottom: 32px;
+    margin-bottom: 48px;
+  }
+}
+
+.author {
+  font-family: "DM Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  color: var(--main-text-cl);
+}
+.basketBuyLink {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  flex-direction: row;
+  @media screen and (min-width: 768px) {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+
+.trashButton {
+  pointer-events: auto;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blue-cl);
+  fill: var(--white-cl);
+  cursor: pointer;
+  border: none;
+  @media screen and (min-width: 768px) {
+    width: 34px;
+    height: 34px;
+  }
+}
+.basketCard_Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.emptyBasket {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+  padding-top: 80px;
+  @include for-tablet-up {
+    padding-top: 100px;
+  }
+}
+.thumb {
+  width: 16px;
+  height: 16px;
+
+  background-size: 16px 16px;
+  mix-blend-mode: luminosity;
+}
+
+.thumbAmazon {
+  width: 32px;
+  height: 11px;
+  background-image: url("../images/buyLinks/svgAmazonMobile.svg");
+  background-size: cover;
+  mix-blend-mode: luminosity;
+  filter: var(--light-amazon);
+}
+.thumbAppleBook {
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/buyLinks/svgAppleBooksMobile.svg");
+  background-size: cover;
+  mix-blend-mode: luminosity;
+}
+.thumbBookshop {
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/buyLinks/svgBookshopMobile.svg");
+  background-size: cover;
+  mix-blend-mode: luminosity;
+}
+// .thumbAmazon:hover,
+.thumbBookshop:hover,
+.thumbAppleBook:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+}
+@media (min-width: 768px) {
+  .thumbAmazon {
+    width: 48px;
+    height: 15px;
+    background-image: url("../images/buyLinks/svgAmazonDesktopTab.svg");
+    background-size: cover;
+    mix-blend-mode: luminosity;
+    filter: var(--light-amazon);
+  }
+  .thumbAppleBook {
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/buyLinks/svgAppleBooksDesktopTab.svg");
+    background-size: cover;
+    mix-blend-mode: luminosity;
+  }
+  .thumbBookshop {
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/buyLinks/svgBookshopDesktopTab.svg");
+    background-size: cover;
+    mix-blend-mode: luminosity;
+  }
+}
+.emptyShoppingList {
+  width: 265px;
+  height: 248px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include for-tablet-up {
+    width: 349px;
+    height: 309px;
+  }
+}
+
+.thumbEmptyShoppingList {
+  width: 265px;
+  height: 168px;
+  background-image: url("../images/buyLinks/emptyMobile@1x.png");
+  background-size: cover;
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: url("../images/buyLinks/emptyMobile@2x.png");
+  }
+}
+
+@media (min-width: 768px) {
+  .thumbEmptyShoppingList {
+    width: 322px;
+    height: 241px;
+    background-image: url("../images/buyLinks/emptyDesktopTab@1x.png");
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url("../images/buyLinks/emptyDesktopTab@2x.png");
+    }
+  }
+}
+
+.emptyText {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  color: var(--fourth-text-cl);
+  text-align: center;
+  width: 244px;
+  margin-bottom: 14px;
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+}

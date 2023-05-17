@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookshelf</title>
-    <!-- Сюда шрифты подключить -->
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
-    <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookshelf</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./sass/index.scss" />
+  <link rel="stylesheet" href="./sass/shoppingList.scss" />
+  <script type="module" src="./shopping_list.js"></script>
+  <link type="image/x-icon" href="/src/images/favicon.ico" rel="shortcut icon" />
 </head>
 
 <body>
-    <include src="./partials/header.html"></include>
-    <main>
-    </main>
+  <include src="./partials/header.html"></include>
+
+  <main>
+    <div class="shoppingList__container">
+      <div class="shoppingList__support">
+        <include src="./partials/supportBunner.html"></include>
+      </div>
+      <include src="./partials/shoppingList.html"></include>
+    </div>
+  </main>
+
+  <include src="./partials/mobileMenu.html"></include>
+  <include src="./partials/scroll-up.html"></include>
 </body>
 
 </html>

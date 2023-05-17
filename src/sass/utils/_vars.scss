@@ -4,6 +4,7 @@
   --accent-cl: #eac645;
   --white-cl: #ffffff;
   --black-cl: #111111;
+  --border-sl-cl: rgba(79, 46, 232, 0.4);
 
   --cubic-time: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --backdrop-background: rgba(17, 17, 17, 0.4);
@@ -24,7 +25,9 @@
   --secondary-text-cl: #111111;
   --secondary-bg-cl: #ffffff;
   --third-text-cl: rgba(17, 17, 17, 0.6);
+  --fourth-text-cl: rgba(0, 0, 0, 0.6);
   --switcher-gradient: linear-gradient(180deg, #4f2ee8 0%, #dcdcdc 100%);
+  --light-amazon: brightness(100%);
 }
 
 .dark-style {
@@ -32,5 +35,7 @@
   --secondary-text-cl: #ffffff;
   --secondary-bg-cl: #111111;
   --third-text-cl: rgba(255, 255, 255, 0.6);
+  --fourth-text-cl: rgba(255, 255, 255, 0.6);
   --switcher-gradient: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
+  --light-amazon: brightness(1800%);
 }
