@@ -14,9 +14,9 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
-  justify-content: center;
-
+  
   @include for-tablet-up {
+    justify-content: space-between;
     padding-top: 112px;
     flex-direction: row;
   }
@@ -24,5 +24,6 @@
   @include for-desktop-up {
     flex-direction: column;
     justify-content: start;
+    margin-right: 40px;
   }
 }

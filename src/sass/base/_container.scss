@@ -6,17 +6,17 @@
     width: $bp-mobile;
   }
 
-  @media screen and (min-width: $bp-tablet) {
+  @include for-tablet-up {
     width: $bp-tablet;
   }
 
-  @media screen and (min-width: $bp-desktop) {
+  @include for-desktop-up {
     width: $bp-desktop;
   }
 }
 
 .desktop-position-flex {
-  @media screen and (min-width: $bp-desktop) {
+  @include for-desktop-up {
     display: flex;
   }
 }
