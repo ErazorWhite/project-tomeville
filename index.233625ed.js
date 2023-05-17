@@ -1,2 +1,0 @@
-document.addEventListener("DOMContentLoaded",(function(){var t=window.location.pathname;document.querySelectorAll(".header__btn").forEach((function(e){"Home"!==e.textContent.trim()||"/project-tomeville/"!==t&&"/project-tomeville/index.html"!==t&&"/index.html"!==t&&"/"!==t?"Shopping list"===e.textContent.trim()&&"/shopping_list.html"===t?e.classList.add("active"):e.classList.remove("active"):e.classList.add("active")}))}));
-//# sourceMappingURL=index.233625ed.js.map
