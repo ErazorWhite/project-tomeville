@@ -92,7 +92,7 @@ function handleCategoryClick(event) {
   }
 }
 
-function hideSection(sectionEl) {
+export function hideSection(sectionEl) {
   sectionEl.innerHTML = '';
   sectionEl.style.display = 'none';
 }
