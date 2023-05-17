@@ -147,7 +147,3 @@ function onEscPress(e) {
     onCloseBtnClick();
   }
 }
-
-// export { BOOKS_IDS };
-
-import * as bodyScrollLock from 'body-scroll-lock';

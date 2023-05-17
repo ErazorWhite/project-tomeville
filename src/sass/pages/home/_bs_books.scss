@@ -56,11 +56,9 @@
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-
     @include for-tablet-up {
+      display: flex;
+      flex-wrap: wrap;
       gap: 25px;
     }
     @include for-desktop-up {

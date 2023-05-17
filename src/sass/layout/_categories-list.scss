@@ -22,7 +22,8 @@
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: var(--third-text-cl);
-  // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  transition: color var(--cubic-time);
 
   @include for-tablet-up {
     font-size: 18px;
@@ -53,7 +54,14 @@
 }
 
 .books__list {
+  & li:not(:last-child) {
+    @include for-phone-only {
+      margin: 0 0 40px 0;
+    }
+  }
   @include for-tablet-up {
+    display: flex;
+    flex-wrap: wrap;
     gap: 25px;
   }
   @include for-desktop-up {
