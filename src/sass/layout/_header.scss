@@ -9,7 +9,6 @@
   justify-content: space-between;
 
   height: 64px;
-  width: 100%;
   margin: 0 auto;
   padding: 0px 20px;
 
@@ -17,6 +16,10 @@
   transition: background-color var(--cubic-time);
   border: 1.5px solid var(--secondary-text-cl);
   border-radius: 0px 0px 8px 8px;
+
+  @media screen and (max-width: ($bp-mobile - 1px)) {
+    width: 100%;
+  }
 
   @include for-tablet-up {
     width: $bp-tablet;
@@ -124,6 +127,8 @@
   }
 
   &__burger {
+    padding: 0;
+
     fill: var(--secondary-text-cl);
     background-color: transparent;
     border-color: transparent;
