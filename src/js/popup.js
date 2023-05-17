@@ -1,6 +1,7 @@
 import { BookAPI } from './bookAPI';
 import storage from './localStorage';
 import { createBookMarkup } from './createMarkupModal';
+import * as bodyScrollLock from 'body-scroll-lock';
 
 let BOOK_ID;
 const KEY_LS = 'booksInShopingList';
@@ -9,6 +10,7 @@ let BOOKS_IDS = {
 };
 const api = new BookAPI();
 const { save, load } = storage;
+let scrollLockMethod;
 
 let booksContainerEl = document.querySelector('[data-action="booksContainer"]');
 
@@ -83,6 +85,10 @@ async function onBooksContainerClick(e) {
 
     window.addEventListener('keydown', onEscPress);
     document.body.classList.add('show-popup');
+
+    const isMenuOpen = false;
+    scrollLockMethod = !isMenuOpen ? 'disableBodyScroll' : 'enableBodyScroll';
+    bodyScrollLock[scrollLockMethod](document.body);
   } catch {
     err => console.log(err.message);
   }
@@ -123,6 +129,7 @@ function onRemoveBookBtnClick() {
 function onCloseBtnClick() {
   window.removeEventListener('keydown', onEscPress);
   document.body.classList.remove('show-popup');
+  bodyScrollLock.enableBodyScroll(document.body);
 
   addBookBtnEl.setAttribute('hidden', true);
   removeBookBtnEl.setAttribute('hidden', true);
@@ -141,4 +148,6 @@ function onEscPress(e) {
   }
 }
 
-export { BOOKS_IDS };
+// export { BOOKS_IDS };
+
+import * as bodyScrollLock from 'body-scroll-lock';
