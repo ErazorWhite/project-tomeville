@@ -32,9 +32,12 @@
     transform: translate(-50%, 30%) rotate(-15deg);
 
     background-image: url(/src/images/mob13@1x.png);
-    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
       background-image: url(/src/images/mob13@2x.png);
     }
     background-repeat: no-repeat;
+    background-size: contain;
   }
 }
