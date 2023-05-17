@@ -36,10 +36,11 @@ async function displayBookCategories() {
       .join('');
 
     // Додавання розмітки до <ul> з початковим елементом
-    categoriesList.innerHTML = `<li class="categories-item" data-category="All categories">All categories</li>${markup}`;
+    categoriesList.innerHTML = `<li class="categories-item current_category" data-category="All categories">All categories</li>${markup}`;
     allCategoriesEl = document.querySelector(
       'li.categories-item[data-category="All categories"]'
     );
+    currentCategory = allCategoriesEl;
 
     // Додаємо обробник подій кліку до кожного елемента категорії
     const categoryItems = document.querySelectorAll('.categories-item');
@@ -78,14 +79,14 @@ function handleCategoryClick(event) {
       hideSection(booksByCategoriesSectionEl);
       bestSellerBooksSectionEl.style.display = '';
       bestSellerBooksSectionEl.innerHTML = bestSellersInitMarkup;
-      
+
       renderBestSellerBooks();
       refreshPopupDOM();
     } else {
       hideSection(bestSellerBooksSectionEl);
       booksByCategoriesSectionEl.style.display = '';
       booksByCategoriesSectionEl.innerHTML = booksByCategoryInitMarkup;
-      
+
       displayBooksByCategory(category);
       refreshPopupDOM();
     }
