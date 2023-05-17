@@ -11,7 +11,7 @@ const LOCALSTORAGE_KEY = 'booksInShopingList';
 
 spinerStart();
 
-let booksId = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || {id:[]};
+let booksId = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || { id: [] };
 
 function onClick(evt) {
   if (
@@ -50,22 +50,22 @@ function onClick(evt) {
 
 function rendering() {
   const api = new BookAPI();
-    booksId.id.map(async id => {
-      try {
-        api.id = id;
-        const response = await api.getBooksById();
-        data = response;
-        emptyShoppingList.innerHTML = '';
-        emptyShoppingList.style.display = 'none';
+  booksId.id.map(async id => {
+    try {
+      api.id = id;
+      const response = await api.getBooksById();
+      data = response;
+      emptyShoppingList.innerHTML = '';
+      emptyShoppingList.style.display = 'none';
 
-        shoppingList.insertAdjacentHTML(
-          'beforeend',
-          createShoppingCardMarkup(response)
-        );
-      } catch (error) {
-        console.log(error.message);
-      }
-    });
+      shoppingList.insertAdjacentHTML(
+        'beforeend',
+        createShoppingCardMarkup(response)
+      );
+    } catch (error) {
+      console.log(error.message);
+    }
+  });
 }
 rendering();
 spinerStop();
@@ -90,7 +90,7 @@ function createShoppingCardMarkup({
                     class="basketCard_Image"
                     src=${book_image || noImg}
                     alt=${title || 'No title'}
-                  />
+                  loading="lazy"/>
                 </div>
                 <div>
                   <h2 class="title">${title || 'No title'}</h2>
