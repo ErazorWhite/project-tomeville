@@ -2,16 +2,21 @@ import { BookAPI } from './bookAPI';
 import svgTrash from '../images/icons.svg';
 import noImg from '../images/noImage/noImage-desk@1x.png';
 import { spinerStart, spinerStop } from './spinner';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 
 const shoppingList = document.querySelector('.basketList');
 const emptyShoppingList = document.querySelector('.emptyBasket');
+const paginationEl = document.querySelector('.pagination');
 shoppingList.addEventListener('click', onClick);
 let data;
 const LOCALSTORAGE_KEY = 'booksInShopingList';
 
 spinerStart();
 
-let booksId = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || {id:[]};
+let booksId = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)) || { id: [] };
+
+let pagination;
 
 function onClick(evt) {
   if (
@@ -50,7 +55,16 @@ function onClick(evt) {
 
 function rendering() {
   const api = new BookAPI();
-    booksId.id.map(async id => {
+
+  const currentPage = pagination.getCurrentPage();
+  const itemsPerPage = 3;
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const booksToRender = booksId.id.slice(startIndex, endIndex);
+
+  Promise.all(
+    booksToRender.map(async id => {
       try {
         api.id = id;
         const response = await api.getBooksById();
@@ -65,10 +79,15 @@ function rendering() {
       } catch (error) {
         console.log(error.message);
       }
+    })
+  )
+    .then(() => {
+      spinerStop();
+    })
+    .catch(error => {
+      console.log(error.message);
     });
 }
-rendering();
-spinerStop();
 
 function createShoppingCardMarkup({
   author,
@@ -104,21 +123,17 @@ function createShoppingCardMarkup({
                     }</p>
                     <ul class="basketBuyLink">
                       <li>
-                        <a
-                          href="${buy_links[0].url}">
-                        <div class="thumbAmazon"></div>
+                        <a href="${buy_links[0].url}">
+                          <div class="thumbAmazon"></div>
                         </a>
                       </li>
                       <li>
-                        <a                          
-                          href="${buy_links[1].url}"
-                          ><div class="thumbAppleBook"></div>
+                        <a href="${buy_links[1].url}">
+                          <div class="thumbAppleBook"></div>
                         </a>
                       </li>
                       <li>
-                        <a                         
-                          href="${buy_links[4].url}"
-                          >
+                        <a href="${buy_links[4].url}">
                           <div class="thumbBookshop"></div>
                         </a>
                       </li>
@@ -128,3 +143,32 @@ function createShoppingCardMarkup({
               </article>
             </li>`;
 }
+
+function getPagination(totalItems, itemsPerPage) {
+  const visiblePages = 3;
+
+  const options = {
+    totalItems: totalItems,
+    itemsPerPage: itemsPerPage,
+    visiblePages: visiblePages,
+    centerAlign: true,
+    firstItemClassName: 'pagination__first-item',
+    lastItemClassName: 'pagination__last-item',
+    prevButtonClassName: 'pagination__prev-btn',
+    nextButtonClassName: 'pagination__next-btn',
+    pageLinkClassName: 'pagination__page-link',
+    activePageLinkClassName: 'pagination__page-link--active',
+  };
+
+  return new Pagination(paginationEl, options);
+}
+
+pagination = getPagination(booksId.id.length, 3);
+pagination.on('afterMove', ({ page }) => {
+  shoppingList.innerHTML = '';
+  rendering(page);
+});
+
+rendering();
+
+
