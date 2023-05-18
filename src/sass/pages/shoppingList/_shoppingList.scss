@@ -106,17 +106,14 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--secondary-text-cl);
+  text-overflow: ellipsis;
 
-  @extend %cut-text;
-  -webkit-line-clamp: 1;
+  color: var(--secondary-text-cl);
 
   @include for-phone-only {
     padding-right: 20px;
-    max-width: 190px;
-    overflow: hidden;
+    max-width: 200px;
     white-space: nowrap;
-    text-overflow: ellipsis;
   }
 }
 .dump {
