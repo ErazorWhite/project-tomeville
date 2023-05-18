@@ -27,6 +27,7 @@ function onClick(evt) {
     return;
   }
   const li = evt.target.closest('li');
+
   const dataId = li.dataset.id;
 
   const idToRemove = booksId.id.indexOf(dataId);
@@ -92,6 +93,24 @@ function rendering() {
     .catch(error => {
       console.log(error.message);
     });
+
+  booksId.id.map(async id => {
+    try {
+      api.id = id;
+      const response = await api.getBooksById();
+      data = response;
+      emptyShoppingList.innerHTML = '';
+      emptyShoppingList.style.display = 'none';
+
+      shoppingList.insertAdjacentHTML(
+        'beforeend',
+        createShoppingCardMarkup(response)
+      );
+    } catch (error) {
+      console.log(error.message);
+    }
+  });
+
 }
 
 function createShoppingCardMarkup({
@@ -114,7 +133,7 @@ function createShoppingCardMarkup({
                     class="basketCard_Image"
                     src=${book_image || noImg}
                     alt=${title || 'No title'}
-                  />
+                  loading="lazy"/>
                 </div>
                 <div>
                   <h2 class="title">${title || 'No title'}</h2>
@@ -128,6 +147,7 @@ function createShoppingCardMarkup({
                     }</p>
                     <ul class="basketBuyLink">
                       <li>
+
                         <a href="${buy_links[0].url}">
                           <div class="thumbAmazon"></div>
                         </a>
@@ -139,6 +159,23 @@ function createShoppingCardMarkup({
                       </li>
                       <li>
                         <a href="${buy_links[4].url}">
+
+                        <a
+                          href="${buy_links[0].url}" target="_blank">
+                        <div class="thumbAmazon"></div>
+                        </a>
+                      </li>
+                      <li>
+                        <a                          
+                          href="${buy_links[1].url}" target="_blank"
+                          ><div class="thumbAppleBook"></div>
+                        </a>
+                      </li>
+                      <li>
+                        <a                         
+                          href="${buy_links[4].url}" target="_blank"
+                          >
+
                           <div class="thumbBookshop"></div>
                         </a>
                       </li>
@@ -175,5 +212,4 @@ pagination.on('afterMove', ({ page }) => {
 });
 
 rendering();
-
 

@@ -106,14 +106,14 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
+  text-overflow: ellipsis;
+
   color: var(--secondary-text-cl);
 
   @include for-phone-only {
     padding-right: 20px;
-    max-width: 190px;
-    overflow: hidden;
+    max-width: 200px;
     white-space: nowrap;
-    text-overflow: ellipsis;
   }
 }
 .dump {
@@ -126,6 +126,9 @@
   line-height: 14px;
   letter-spacing: 0.03em;
   color: var(--main-text-cl);
+
+  @extend %cut-text;
+  -webkit-line-clamp: 1;
 }
 .description {
   min-width: 193px;
@@ -156,12 +159,23 @@
   letter-spacing: -0.04em;
   color: var(--main-text-cl);
 
+  overflow: hidden;
+
   @include for-phone-only {
     padding-right: 60px;
     max-width: 190px;
-    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+  @include for-tablet-up {
+    max-width: 300px;
+    display: -webkit-box;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+  }
+  @include for-desktop-up {
   }
 }
 .basketBuyLink {
