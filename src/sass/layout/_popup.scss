@@ -62,7 +62,7 @@ body.show-popup .modal-container {
   border: none;
 
   fill: var(--secondary-text-cl);
-  background-color: var(--secondary-bg-cl);
+  background-color: transparent;
   transition: fill var(--cubic-time);
 
   &:hover,
