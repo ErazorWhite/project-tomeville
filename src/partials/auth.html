@@ -1,84 +1,56 @@
 <div class="backdrop-mob is-hidden">
   <div class="modal">
-    <button class="close-btn modal__close-btn" type="button" data-modal-close>
-      <svg width="18" height="18">
+    <button class="close-btn modal__close-btn" type="button">
+      <!-- <svg width="18" height="18">
         <!-- <use href="./images/icons/icons.svg#icon-close"></use> -->
-      </svg>
+      <!-- </svg> --> 
     </button>
 
-    <h3 class="modal__title">Залиште свої дані, ми вам передзвонимо</h3>
-    <form name="contact-form">
+    <form name="contact-form auth-form">
       <ul class="form-field">
         <li class="form-field__item">
-          <label class="form-field__label" for="user-name">Ім'я</label>
+          <label class="form-field__label" for="user-name"></label>
           <div class="form-field__content">
             <input
               class="form-field__input"
-              id="user-name"
+              id="user-name-auth"
               type="text"
               name="user-name"
             />
-            <svg class="form-field__icon" width="18" height="18">
-              <!-- <use href="./images/icons/icons.svg#icon-user"></use> -->
-            </svg>
           </div>
         </li>
-        <li class="form-field__item">
-          <label class="form-field__label" for="user-tel">Телефон</label>
+                <li class="form-field__item">
+          <label class="form-field__label" for="user-email"></label>
           <div class="form-field__content">
             <input
               class="form-field__input"
-              id="user-tel"
-              type="tel"
-              name="user-tel"
-            />
-            <svg class="form-field__icon" width="18" height="18">
-              <!-- <use href="./images/icons/icons.svg#icon-phone"></use> -->
-            </svg>
-          </div>
-        </li>
-        <li class="form-field__item">
-          <label class="form-field__label" for="user-email">Пошта</label>
-          <div class="form-field__content">
-            <input
-              class="form-field__input"
-              id="user-email"
+              id="user-email-auth"
               type="email"
               name="user-email"
             />
             <svg class="form-field__icon" width="18" height="18">
-              <!-- <use href="./images/icons/icons.svg#icon-email"></use> -->
+              <use href="/src/images/icons.svg#icon-auth-mail"></use>
             </svg>
           </div>
         </li>
         <li class="form-field__item">
-          <label class="form-field__label" for="feedback" rows=""
-            >Коментар</label
-          >
-          <textarea
-            class="form-field__textarea"
-            name="feedback"
-            id="feedback"
-            placeholder="Введіть текст"
-          ></textarea>
+          <label class="form-field__label" for="user-password"></label>
+          <div class="form-field__content">
+            <input
+              class="form-field__input"
+              id="user-password-auth"
+              type="password"
+              name="user-password"
+            />
+            <svg class="form-field__icon" width="18" height="18">
+              <use href="/src/images/icons.svg#icon-auth-password"></use>
+            </svg>
+          </div>
         </li>
-      </ul>
-      <div class="checkbox form-field__checkbox">
-        <input
-          class="checkbox__input"
-          type="checkbox"
-          name="policy"
-          id="policy"
-        />
-        <svg class="checkbox__icon" width="16" height="15">
-          <!-- <use href="./images/icons/icons.svg#icon-complate"></use> -->
-        </svg>
-        <label class="checkbox__description" for="policy"
-          >Погоджуюся з розсилкою та приймаю
-          <a class="checkbox__policy" href="#">Умови договору</a></label
-        >
-      </div>
-      <button class="btn-big form-field__btn" type="submit">Відправити</button>
+
+    <button class="btn-big form-field__btn auth-form-singUp-btn submitSingUpBtn" type="submit">Sing up</button>
+    <button class="btn-big form-field__btn auth-form-singUp-btn addbook" type="button">Sing up</button>
+    <button class="btn-big form-field__btn auth-form-singIn-btn createNewUserAuth" type="submit">Sing in</button>
     </form>
   </div>
 </div>
