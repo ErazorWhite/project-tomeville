@@ -45,7 +45,6 @@ body.show-popup .modal-container {
   @include for-tablet-up {
     padding: 40px 40px;
     width: 579px;
-    // height: 465px;
   }
 }
 
@@ -59,7 +58,9 @@ body.show-popup .modal-container {
   align-items: center;
   padding: 0;
 
+  cursor: pointer;
   border: none;
+
   fill: var(--secondary-text-cl);
   background-color: var(--secondary-bg-cl);
   transition: fill var(--cubic-time);
@@ -167,15 +168,31 @@ body.show-popup .modal-container {
 .popup-img-links {
   display: flex;
   align-items: center;
+
   margin: 0 0 40px 0;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 0;
   }
-}
 
-.popup-link:not(:last-child) {
-  margin: 0 20px 0 0;
+  &__item:not(:last-child) {
+    margin: 0 20px 0 0;
+  }
+
+  .popup-amazon-store {
+    width: 62px;
+    height: 19px;
+  }
+
+  .popup-app-book-store {
+    width: 33px;
+    height: 32px;
+  }
+
+  .popup-book-store {
+    width: 38px;
+    height: 36px;
+  }
 }
 
 .add-remove-btn-container {
