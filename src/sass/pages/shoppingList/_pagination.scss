@@ -1,5 +1,5 @@
 .tui-pagination .tui-page-btn {
-   font-family: 'DM Sans' !important;
+  font-family: "DM Sans" !important;
   font-weight: 700 !important;
   font-size: 18px !important;
   line-height: 22px !important;
@@ -7,9 +7,11 @@
   border: 1px solid black !important;
   margin-bottom: 40px;
   margin-right: 5px;
-  padding: 5px 0 14px !important;
-  font-size: 12px !important;
+  padding: 8px 0 8px !important;
+  font-size: 18px !important;
   background: white;
+  width: 38px !important;
+  height: 38px !important;
   & .tui-next-is-ellip {
     margin-right: 8px !important;
   }
@@ -17,8 +19,8 @@
     width: 44px !important;
     height: 44px !important;
     margin-right: 8px;
-    font-size: 16px !important;
-    padding: 12px 0 18px !important;
+    font-size: 18px !important;
+    padding: 10px 0 10px !important;
     border: 0.5px solid black !important;
   }
 }
@@ -27,9 +29,9 @@
   background: #111111 !important;
   border-color: gray !important;
   margin-right: 5px;
-  padding: 5px 0 15px !important;
- @media screen and (min-width: $bp-tablet) {
-    padding: 12px 0 18px !important;
+  padding: 8px 0 8px !important;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 10px 0 10px !important;
     margin-right: 8px;
   }
 }
@@ -41,8 +43,12 @@
   .tui-first {
     background: #eac645;
     margin-right: 4px;
+    width: 38px !important;
+    height: 38px !important;
     @media screen and (min-width: $bp-tablet) {
       margin-right: 6px;
+      width: 44px !important;
+      height: 44px !important;
     }
   }
   & .tui-last {
@@ -58,10 +64,9 @@
   .tui-ico-prev,
   .tui-ico-next,
   .tui-ico-first {
-    
     position: absolute;
-    top: 30%;
-    right: 30%;
+    top: 33%;
+    right: 33%;
     width: 12px !important;
     height: 10px !important;
     @media screen and (min-width: $bp-tablet) {
@@ -73,14 +78,14 @@
   }
   & .tui-ico-last {
     background-position: 0 -12px;
-    right: 20%;
+    right: 30%;
     @media screen and (min-width: $bp-tablet) {
       right: 30%;
     }
   }
   & .tui-ico-prev,
   .tui-ico-next {
-    top: 30%;
+    top: 33%;
     right: 40%;
     width: 6px !important;
     height: 10px !important;
@@ -127,4 +132,3 @@
 .tui-is-disabled {
   background: #111111 !important;
 }
-

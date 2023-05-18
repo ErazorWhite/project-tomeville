@@ -4,6 +4,7 @@
     @extend .container;
     @include for-desktop-up {
       display: flex;
+      
       gap: 40px;
     }
 
