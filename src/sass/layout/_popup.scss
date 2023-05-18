@@ -155,7 +155,7 @@ body.show-popup .modal-container {
   overflow-y: auto;
 
   @include for-phone-only {
-    max-height: 70px;
+    height: 70px;
   }
   @include for-tablet-up {
     max-height: 180px;
@@ -196,6 +196,8 @@ body.show-popup .modal-container {
 }
 
 .add-remove-btn-container {
+  margin: 0 0 8px 0;
+
   text-align: center;
 }
 
