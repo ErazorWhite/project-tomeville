@@ -8,3 +8,4 @@ import './js/renderBooksByCategory';
 import './js/support/charityFoundsRender';
 import './js/support/supportSlider';
 import './js/makeHeaderTabsActive.js';
+import './js/auth';

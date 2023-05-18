@@ -2,27 +2,28 @@
 @import './common';
 @import './utils/vars';
 @import './utils/templates';
-@import "../../node_modules/swiper/swiper.scss";
+@import './base/backdrop';
+@import '../../node_modules/swiper/swiper.scss';
 
 // Utilities & Base
-@import "./base/breakpoints";
-@import "./base/container";
-@import "./base/shared";
-@import "./base/content-container";
+@import './base/breakpoints';
+@import './base/container';
+@import './base/shared';
+@import './base/content-container';
 
 // Layout
-@import "./layout/header";
-@import "./layout/popup";
-@import "./layout/backdrop";
-@import "./layout/book-card";
-@import "./layout/scroll-up";
-@import "./layout/mobileMenu";
-@import "./layout/switcher";
+@import './layout/header';
+@import './layout/popup';
+@import './layout/backdrop';
+@import './layout/book-card';
+@import './layout/scroll-up';
+@import './layout/mobileMenu';
+@import './layout/switcher';
 @import './layout/categories-list';
 
 // Fonts
-@import "./fonts/stylesheet.css";
+@import './fonts/stylesheet.css';
 
 // Pages
-@import "./pages/home/bs_books.scss";
-@import "./pages/home/supportBunner";
+@import './pages/home/bs_books.scss';
+@import './pages/home/supportBunner';

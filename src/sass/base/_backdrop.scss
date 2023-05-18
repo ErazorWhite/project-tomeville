@@ -1,0 +1,55 @@
+.backdrop-mob {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--blue-cl);
+  opacity: 5;
+
+  z-index: 5;
+  // transition: opacity 250ms $timing-funk, visibility 250ms $timing-funk;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 528px;
+  height: 100%;
+  max-height: 581px;
+  padding: 40px;
+
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+
+  &__close-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 8px;
+    right: 8px;
+  }
+
+  // &__title {
+  //   @extend %title-cl;
+  //   margin-bottom: 12px;
+
+  //   font-weight: 700;
+  //   font-size: 20px;
+  //   line-height: 1.15em;
+  //   text-align: center;
+  //   letter-spacing: 0.03em;
+  // }
+}
