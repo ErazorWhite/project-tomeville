@@ -1,3 +1,4 @@
+
 import { BookAPI } from './bookAPI';
 import svgTrash from '../images/icons.svg';
 import noImg from '../images/noImage/noImage-desk@1x.png';
@@ -9,7 +10,6 @@ const shoppingList = document.querySelector('.basketList');
 const emptyShoppingList = document.querySelector('.emptyBasket');
 const paginationEl = document.querySelector('.pagination');
 shoppingList.addEventListener('click', onClick);
-let data;
 const LOCALSTORAGE_KEY = 'booksInShopingList';
 
 spinerStart();
@@ -83,6 +83,11 @@ function rendering() {
   )
     .then(() => {
       spinerStop();
+      if (booksId.id.length > itemsPerPage || currentPage > 1) {
+        paginationEl.style.display = 'block';
+      } else {
+        paginationEl.style.display = 'none';
+      }
     })
     .catch(error => {
       console.log(error.message);
@@ -145,7 +150,7 @@ function createShoppingCardMarkup({
 }
 
 function getPagination(totalItems, itemsPerPage) {
-  const visiblePages = 3;
+  const visiblePages = totalItems > itemsPerPage ? 3 : 0;
 
   const options = {
     totalItems: totalItems,
