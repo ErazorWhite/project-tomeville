@@ -22,6 +22,44 @@
     display: flex;
   }
 
+  &__btns {
+    // margin-top: 126px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -150%);
+  }
+  &__btn {
+    min-width: 72px;
+    display: inline-block;
+    font-weight: 500;
+
+    color: var(--white-cl);
+    fill: var(--white-cl);
+
+    transition: background-color 250ms;
+
+    &:hover,
+    &:focus {
+      color: var(--black-cl);
+      fill: var(--black-cl);
+      background-color: var(--accent-cl);
+
+      //   border-color: $brandColor;
+    }
+  }
+  &__btn-home {
+    margin-left: 16px;
+    margin-bottom: 8px;
+  }
+  &__btn-shoppingList {
+    max-width: 151px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
   &__bgImg {
     position: absolute;
     top: 50%;
@@ -32,7 +70,9 @@
     transform: translate(-50%, 30%) rotate(-15deg);
 
     background-image: url(/src/images/mob13@1x.png);
-    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
       background-image: url(/src/images/mob13@2x.png);
     }
     background-repeat: no-repeat;
