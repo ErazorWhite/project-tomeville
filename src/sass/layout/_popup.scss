@@ -22,8 +22,8 @@ body.show-popup .modal-container {
 
   padding: 40px 24px;
 
-  background: var(--white-cl);
-  border: 2px solid var(--black-cl);
+  background-color: var(--modal-bg-cl);
+  border: 2px solid var(--secondary-text-cl);
   border-radius: 18px;
   transform: scale(0.5);
   transition: transform var(--cubic-time);
@@ -45,7 +45,6 @@ body.show-popup .modal-container {
   @include for-tablet-up {
     padding: 40px 40px;
     width: 579px;
-    // height: 465px;
   }
 }
 
@@ -59,8 +58,11 @@ body.show-popup .modal-container {
   align-items: center;
   padding: 0;
 
+  cursor: pointer;
   border: none;
-  background-color: var(--white-cl);
+
+  fill: var(--secondary-text-cl);
+  background-color: transparent;
   transition: fill var(--cubic-time);
 
   &:hover,
@@ -106,7 +108,8 @@ body.show-popup .modal-container {
 .popup-title {
   margin: 0 0 4px 0;
 
-  max-height: 70px;
+  @extend %primary-title-text;
+  color: var(--secondary-text-cl);
   @extend %cut-text;
 
   line-height: 1.12;
@@ -147,10 +150,12 @@ body.show-popup .modal-container {
   font-style: normal;
   color: var(--secondary-text-cl);
 
+  @extend %primary-description;
+  color: var(--secondary-text-cl);
   overflow-y: auto;
 
   @include for-phone-only {
-    max-height: 70px;
+    height: 70px;
   }
   @include for-tablet-up {
     max-height: 180px;
@@ -163,33 +168,49 @@ body.show-popup .modal-container {
 .popup-img-links {
   display: flex;
   align-items: center;
+
   margin: 0 0 40px 0;
 
   @media screen and (min-width: $bp-tablet) {
     margin: 0;
   }
-}
 
-.popup-link:not(:last-child) {
-  margin: 0 20px 0 0;
+  &__item:not(:last-child) {
+    margin: 0 20px 0 0;
+  }
+
+  .popup-amazon-store {
+    width: 62px;
+    height: 19px;
+  }
+
+  .popup-app-book-store {
+    width: 33px;
+    height: 32px;
+  }
+
+  .popup-book-store {
+    width: 38px;
+    height: 36px;
+  }
 }
 
 .add-remove-btn-container {
+  margin: 0 0 8px 0;
+
   text-align: center;
 }
 
-%modal-button {
-  padding: 14px 23px;
-  margin: 0 0 8px 0;
-
-  font-size: 14px;
+.add-book-button {
+  @extend %button-text;
 
   @include for-tablet-up {
     font-size: 18px;
     width: 100%;
   }
+  color: var(--secondary-text-cl);
 
-  background-color: var(--white-cl);
+  background-color: var(--secondary-bg-cl);
   border: 2px solid var(--blue-cl);
   border-radius: 40px;
   transition: color var(--cubic-time), background-color var(--cubic-time);
@@ -201,12 +222,25 @@ body.show-popup .modal-container {
   }
 }
 
-.add-book-button {
-  @extend %modal-button;
-}
-
 .remove-book-button {
-  @extend %modal-button;
+  @extend %button-text;
+  color: var(--secondary-text-cl);
+
+  background-color: var(--secondary-bg-cl);
+  border: 2px solid var(--blue-cl);
+  border-radius: 40px;
+  transition: color var(--cubic-time), background-color var(--cubic-time);
+
+  @include for-tablet-up {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--white-cl);
+    background-color: var(--blue-cl);
+  }
 }
 
 .remove-book-text-container {
@@ -221,13 +255,6 @@ body.show-popup .modal-container {
   width: 100%;
   text-align: center;
 
-  font-size: 12px;
-  line-height: 1.2;
-  letter-spacing: -0.04em;
-
-  color: var(--main-text-cl);
-
-  @include for-phone-only {
-    // max-width: 287px;
-  }
+  @extend %tertiary-text;
+  color: var(--third-text-cl);
 }
