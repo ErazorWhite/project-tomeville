@@ -1,4 +1,3 @@
-
 import { BookAPI } from './bookAPI';
 import svgTrash from '../images/icons.svg';
 import noImg from '../images/noImage/noImage-desk@1x.png';
@@ -10,6 +9,7 @@ const shoppingList = document.querySelector('.basketList');
 const emptyShoppingList = document.querySelector('.emptyBasket');
 const paginationEl = document.querySelector('.pagination');
 shoppingList.addEventListener('click', onClick);
+
 const LOCALSTORAGE_KEY = 'booksInShopingList';
 
 spinerStart();
@@ -27,7 +27,6 @@ function onClick(evt) {
     return;
   }
   const li = evt.target.closest('li');
-
   const dataId = li.dataset.id;
 
   const idToRemove = booksId.id.indexOf(dataId);
@@ -84,7 +83,7 @@ function rendering() {
   )
     .then(() => {
       spinerStop();
-      if (booksId.id.length > itemsPerPage || currentPage > 1) {
+      if (booksId.id.length >= 3) {
         paginationEl.style.display = 'block';
       } else {
         paginationEl.style.display = 'none';
@@ -93,24 +92,6 @@ function rendering() {
     .catch(error => {
       console.log(error.message);
     });
-
-  booksId.id.map(async id => {
-    try {
-      api.id = id;
-      const response = await api.getBooksById();
-      data = response;
-      emptyShoppingList.innerHTML = '';
-      emptyShoppingList.style.display = 'none';
-
-      shoppingList.insertAdjacentHTML(
-        'beforeend',
-        createShoppingCardMarkup(response)
-      );
-    } catch (error) {
-      console.log(error.message);
-    }
-  });
-
 }
 
 function createShoppingCardMarkup({
@@ -133,7 +114,7 @@ function createShoppingCardMarkup({
                     class="basketCard_Image"
                     src=${book_image || noImg}
                     alt=${title || 'No title'}
-                  loading="lazy"/>
+                  />
                 </div>
                 <div>
                   <h2 class="title">${title || 'No title'}</h2>
@@ -141,13 +122,12 @@ function createShoppingCardMarkup({
                   <p class="description">
                     ${description || 'No description'}
                   </p>
-                  
+
                     <p class="author underscription">${
                       author || 'No author'
                     }</p>
                     <ul class="basketBuyLink">
                       <li>
-
                         <a href="${buy_links[0].url}">
                           <div class="thumbAmazon"></div>
                         </a>
@@ -159,35 +139,18 @@ function createShoppingCardMarkup({
                       </li>
                       <li>
                         <a href="${buy_links[4].url}">
-
-                        <a
-                          href="${buy_links[0].url}" target="_blank">
-                        <div class="thumbAmazon"></div>
-                        </a>
-                      </li>
-                      <li>
-                        <a                          
-                          href="${buy_links[1].url}" target="_blank"
-                          ><div class="thumbAppleBook"></div>
-                        </a>
-                      </li>
-                      <li>
-                        <a                         
-                          href="${buy_links[4].url}" target="_blank"
-                          >
-
                           <div class="thumbBookshop"></div>
                         </a>
                       </li>
                     </ul>
-                  
+
                 </div>
               </article>
             </li>`;
 }
 
 function getPagination(totalItems, itemsPerPage) {
-  const visiblePages = totalItems > itemsPerPage ? 3 : 0;
+  const visiblePages = 3;
 
   const options = {
     totalItems: totalItems,
@@ -207,9 +170,11 @@ function getPagination(totalItems, itemsPerPage) {
 
 pagination = getPagination(booksId.id.length, 3);
 pagination.on('afterMove', ({ page }) => {
+  if (booksId.id.length <= 3) {
+    paginationEl.style.display = 'none';
+  }
   shoppingList.innerHTML = '';
   rendering(page);
 });
 
 rendering();
-
