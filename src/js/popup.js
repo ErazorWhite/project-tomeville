@@ -69,7 +69,7 @@ async function onBooksContainerClick(e) {
       description,
       buy_links[0].url,
       buy_links[1].url,
-      buy_links[2].url
+      buy_links[4].url
     );
 
     // Звертаємося до локалки і перевіряємо наявність книжки, в залеж. від відповіді виводим кнопку
