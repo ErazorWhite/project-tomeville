@@ -103,13 +103,17 @@ function showAddOrRemoveBtn(bookInLs) {
     addBookBtnEl.removeAttribute('hidden');
   }
 }
-import { addBookToWishList } from './auth';
+import {
+  addBookToWishList,
+  updateList,
+  deleteList,
+} from './authOnWebSite/authWithList';
 function onAddBookBtnClick() {
   // Записуємо данні в локал сторейдж
   // Замінюємо кнопку на ремув
   BOOKS_IDS.id.push(BOOK_ID);
   save(KEY_LS, BOOKS_IDS);
-  addBookToWishList(JSON.stringify(BOOKS_IDS)); // func auth add
+  updateList(JSON.stringify(BOOKS_IDS)); // func auth add
 
   addBookBtnEl.setAttribute('hidden', true);
   removeBookBtnEl.removeAttribute('hidden');
@@ -122,7 +126,7 @@ function onRemoveBookBtnClick() {
   const newArrr = BOOKS_IDS.id.filter(item => item !== BOOK_ID);
   BOOKS_IDS.id = newArrr;
   save(KEY_LS, BOOKS_IDS);
-  addBookToWishList(JSON.stringify(BOOKS_IDS)); //func auth remove
+  deleteList(JSON.stringify(BOOKS_IDS)); //func auth remove
   removeBookBtnEl.setAttribute('hidden', true);
   removeBookTextEl.setAttribute('hidden', true);
   addBookBtnEl.removeAttribute('hidden');
