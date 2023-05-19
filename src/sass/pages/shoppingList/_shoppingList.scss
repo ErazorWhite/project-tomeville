@@ -4,6 +4,7 @@
     @extend .container;
     @include for-desktop-up {
       display: flex;
+      
       gap: 40px;
     }
 
@@ -30,6 +31,10 @@
       width: 100%;
       padding-top: 0;
     }
+  }
+
+  &__pagination-container {
+    width: 100%;
   }
 }
 

@@ -1,0 +1,134 @@
+.tui-pagination .tui-page-btn {
+  font-family: "DM Sans" !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  line-height: 22px !important;
+  border-radius: 50% !important;
+  border: 1px solid black !important;
+  margin-bottom: 40px;
+  margin-right: 5px;
+  padding: 8px 0 8px !important;
+  font-size: 18px !important;
+  background: white;
+  width: 38px !important;
+  height: 38px !important;
+  & .tui-next-is-ellip {
+    margin-right: 8px !important;
+  }
+  @media screen and (min-width: $bp-tablet) {
+    width: 44px !important;
+    height: 44px !important;
+    margin-right: 8px;
+    font-size: 18px !important;
+    padding: 10px 0 10px !important;
+    border: 0.5px solid black !important;
+  }
+}
+.tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  background: #111111 !important;
+  border-color: gray !important;
+  margin-right: 5px;
+  padding: 8px 0 8px !important;
+  @media screen and (min-width: $bp-tablet) {
+    padding: 10px 0 10px !important;
+    margin-right: 8px;
+  }
+}
+.tui-pagination {
+  position: relative;
+  & .tui-last,
+  .tui-next,
+  .tui-prev,
+  .tui-first {
+    background: #eac645;
+    margin-right: 4px;
+    width: 38px !important;
+    height: 38px !important;
+    @media screen and (min-width: $bp-tablet) {
+      margin-right: 6px;
+      width: 44px !important;
+      height: 44px !important;
+    }
+  }
+  & .tui-last {
+    margin-right: 0;
+  }
+  & .tui-prev {
+    margin-right: 8px !important;
+  }
+  & .tui-next {
+    margin-left: 0 !important;
+  }
+  & .tui-ico-last,
+  .tui-ico-prev,
+  .tui-ico-next,
+  .tui-ico-first {
+    position: absolute;
+    top: 33%;
+    right: 33%;
+    width: 12px !important;
+    height: 10px !important;
+    @media screen and (min-width: $bp-tablet) {
+      top: 35%;
+      right: 35%;
+      width: 14px !important;
+      height: 12px !important;
+    }
+  }
+  & .tui-ico-last {
+    background-position: 0 -12px;
+    right: 30%;
+    @media screen and (min-width: $bp-tablet) {
+      right: 30%;
+    }
+  }
+  & .tui-ico-prev,
+  .tui-ico-next {
+    top: 33%;
+    right: 40%;
+    width: 6px !important;
+    height: 10px !important;
+    @media screen and (min-width: $bp-tablet) {
+      top: 35%;
+      right: 40%;
+      width: 8px !important;
+      height: 12px !important;
+    }
+  }
+
+  & .tui-ico-next {
+    right: 35%;
+    @media screen and (min-width: $bp-tablet) {
+      right: 35%;
+    }
+  }
+  & .tui-ico-ellip {
+    position: absolute;
+    right: 25%;
+    width: 10px !important;
+    height: 1.5px !important;
+    margin-top: 9px !important;
+    @media screen and (min-width: $bp-tablet) {
+      right: 37%;
+      height: 2px !important;
+      margin-top: 15px !important;
+    }
+  }
+}
+.tui-page-btn.tui-prev {
+  margin-right: 8px;
+  @media screen and (min-width: $bp-tablet) {
+    margin-right: 10px !important;
+  }
+}
+.tui-page-btn.tui-next-is-ellip.pagination__last-item {
+  margin-right: 8px;
+  @media screen and (min-width: $bp-tablet) {
+    margin-right: 10px;
+  }
+}
+
+.tui-is-disabled {
+  background: #111111 !important;
+}
