@@ -5,6 +5,8 @@
 
 ТЗ: https://docs.google.com/spreadsheets/d/1p2P89GVo0HYGW2h2dXxrxxjMbpAB5T8RG-wy4oaEkNw/edit#gid=0
 
+Захист: https://youtu.be/Fim057MKCvw?t=2453
+
 # Parcel template
 
 Этот проект был создан при помощи Parcel. Для знакомства и настройки
